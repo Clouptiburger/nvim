@@ -14,12 +14,16 @@ return require('packer').startup(function(use)
 	}
 	use { "ellisonleao/gruvbox.nvim" }
 	use 'nvim-treesitter/nvim-treesitter'
-	
+
 	--use 'feline-nvim/feline.nvim'
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	-- 	use 'vim-airline/vim-airline'
+	-- 	use 'vim-airline/vim-airline-themes'
 	use 'KarimElghamry/vim-auto-comment'
 	-- LSP 
 	use 'neovim/nvim-lspconfig'
 	--use 'kabouzeid/nvim-lspinstall'
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 end)
