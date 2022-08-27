@@ -20,7 +20,11 @@ return require('packer').startup(function(use)
 	-- 	use 'vim-airline/vim-airline-themes'
 	use 'KarimElghamry/vim-auto-comment'
 	-- LSP 
-	use 'neovim/nvim-lspconfig'
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
 	--use 'kabouzeid/nvim-lspinstall'
 	use {
 		'nvim-lualine/lualine.nvim',

@@ -6,6 +6,6 @@ function map(mode, lhs, rhs, opts)
 	end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
+-- Telescope 
 map("n", "<Space>ff", ":Telescope find_files<CR>")
 map("n", "<Space>fg", ":Telescope live_grep<CR>")
