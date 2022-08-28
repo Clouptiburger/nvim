@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
-
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- local opts = { noremap = true, silent = true }
@@ -32,22 +32,26 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
-    vim.keymap.set("n", "<leader>df", vim.diagnostic.goto_next)
+    vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
+    vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
 end
 
 local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
-require("lspconfig")["pyright"].setup({
+require("lspconfig")["jedi_language_server"].setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
 })
 require("lspconfig")["tsserver"].setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
 })
 require("lspconfig")["rust_analyzer"].setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     -- Server-specific settings...
@@ -56,6 +60,7 @@ require("lspconfig")["rust_analyzer"].setup({
     },
 })
 require("lspconfig")["sumneko_lua"].setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     settings = {

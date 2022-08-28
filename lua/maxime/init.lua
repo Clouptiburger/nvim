@@ -3,7 +3,7 @@ require('maxime.set')
 require("maxime.keymap")
 require("maxime.colors")
 require("maxime.lsp")
---require("maxime.lsp")
+require("maxime.cmp")
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("highlight_yank", {}),
 	desc = "Hightlight selection on yank",
