@@ -8,6 +8,11 @@ local flatten = vim.tbl_flatten
 -- i would like to be able to do telescope
 -- and have telescope do some filtering on files and some grepping
 
+-- my settings :
+local regexp = false 
+local caseSensitive = false
+
+
 return function(opts)
   opts = opts or {}
   opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
@@ -30,7 +35,11 @@ return function(opts)
 
       local args = { "rg" }
       if prompt_split[1] then
-        table.insert(args, "-e")
+        if regexp then
+            table.insert(args, "-e")
+        else
+            table.insert(args, "-F")
+        end
         table.insert(args, prompt_split[1])
       end
 
