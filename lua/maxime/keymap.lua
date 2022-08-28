@@ -1,11 +1,7 @@
--- Functional wrapper for mapping custom keybindings
-function map(mode, lhs, rhs, opts)
-	local options = { noremap = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
--- Telescope 
-map("n", "<Space>ff", ":Telescope find_files<CR>")
-map("n", "<Space>fg", ":Telescope live_grep<CR>")
+-- Telescope
+-- Using Lua functions
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
+vim.keymap.set('n', "<leader>fg", require('telescope.builtin').live_grep)
+vim.keymap.set('n', "<leader>fb", require('telescope.builtin').buffers)
+vim.keymap.set('n', "<leader>fo", require('telescope.builtin').oldfiles)
+vim.keymap.set('n', "<leader>fh", require('telescope.builtin').help_tags)

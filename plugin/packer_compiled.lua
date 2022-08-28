@@ -69,6 +69,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/maxime/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  darcula = {
+    loaded = true,
+    path = "/home/maxime/.local/share/nvim/site/pack/packer/start/darcula",
+    url = "https://github.com/doums/darcula"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/maxime/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
@@ -89,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/maxime/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/maxime/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/maxime/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -103,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maxime/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["nvim-web-nonicons"] = {
+    loaded = true,
+    path = "/home/maxime/.local/share/nvim/site/pack/packer/start/nvim-web-nonicons",
+    url = "https://github.com/yamatsum/nvim-web-nonicons"
   },
   ["packer.nvim"] = {
     loaded = true,

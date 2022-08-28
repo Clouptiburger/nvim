@@ -1,2 +1,2 @@
-vim.cmd "colorscheme gruvbox"
-require('lualine').setup{options = { theme = 'gruvbox' }}
+vim.cmd "colorscheme darcula"
+require('lualine').setup{options = { theme = 'dracula' }}

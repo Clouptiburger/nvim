@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 	use 'kyazdani42/nvim-web-devicons'
+    use "yamatsum/nvim-web-nonicons"
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		-- or                            , branch = '0.1.x',
@@ -14,7 +15,7 @@ return require('packer').startup(function(use)
 	}
 	use { "ellisonleao/gruvbox.nvim" }
 	use 'nvim-treesitter/nvim-treesitter'
-
+    use 'doums/darcula'
 	--use 'feline-nvim/feline.nvim'
 	-- 	use 'vim-airline/vim-airline'
 	-- 	use 'vim-airline/vim-airline-themes'
@@ -30,4 +31,6 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
+    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'L3MON4D3/LuaSnip'
 end)
