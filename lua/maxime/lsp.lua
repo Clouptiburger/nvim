@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
+    vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
 end
@@ -40,12 +40,17 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
-require("lspconfig")["jedi_language_server"].setup({
+require("lspconfig")["pylsp"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
 })
 require("lspconfig")["tsserver"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+})
+require("lspconfig")["lemminx"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
