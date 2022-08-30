@@ -1,2 +1,3 @@
-vim.cmd "colorscheme darcula"
+-- vim.cmd "colorscheme darcula"
 require('lualine').setup{options = { theme = 'dracula' }}
+require('colorbuddy').colorscheme('gruvbuddy')
