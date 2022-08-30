@@ -25,7 +25,12 @@ return require('packer').startup(function(use)
     --use 'feline-nvim/feline.nvim'
     -- 	use 'vim-airline/vim-airline'
     -- 	use 'vim-airline/vim-airline-themes'
-    use 'KarimElghamry/vim-auto-comment'
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     -- LSP
     use {
         "williamboman/mason.nvim",
@@ -53,4 +58,11 @@ return require('packer').startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'nvim-telescope/telescope-dap.nvim'
+    use 'mfussenegger/nvim-dap-python'
 end)

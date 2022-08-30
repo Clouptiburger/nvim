@@ -1,6 +1,10 @@
 -- Basic keymaps
 vim.keymap.set('i', '§', '\\')
 vim.keymap.set('n', 'ù', '#')
+vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
+vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
+vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
+vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 -- Telescope
 -- Using Lua functions
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
