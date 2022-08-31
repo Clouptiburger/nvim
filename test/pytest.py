@@ -3,7 +3,8 @@ import numpy
 
 numpy.amax
 
+def function(test : str):
+    return test
 
-def function(*args):
-    for arg in args:
-        return print(str(arg))
+test = function(1)
+
