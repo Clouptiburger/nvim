@@ -7,21 +7,21 @@ vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
 vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 
 
--- Quick fix list short cut 
+-- Quick fix list short cut
 vim.keymap.set('n', "<leader>k", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>j", "<cmd>cprev<CR>zz")
 
 -- -- greatest remap ever
-vim.keymap.set('x', '<leader>p', "\"_dP") 
+vim.keymap.set('x', '<leader>p', "\"_dP")
 -- -- next greatest remap ever : asbjornHaland
 vim.keymap.set('n', "<leader>y", "\"+y")
 vim.keymap.set('v', "<leader>y", "\"+y")
 vim.keymap.set('n', "<leader>Y", "\"+Y")
 
 vim.keymap.set('n', "<leader>d", "\"_d")
-vim.keymap.set('v',"<leader>d", "\"_d")
+vim.keymap.set('v', "<leader>d", "\"_d")
 
-vim.keymap.set('v',"<leader>d", "\"_d")
+vim.keymap.set('v', "<leader>d", "\"_d")
 
 -- Telescope
 -- Using Lua functions
@@ -36,6 +36,7 @@ vim.keymap.set('n', "<leader>fd", require('telescope.builtin').diagnostics)
 vim.keymap.set('n', "<leader>/",
     function() require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy()) end)
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
+vim.keymap.set('n', "<leader>wt", require('telescope.builtin').treesitter)
 -- NvimTree
 vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
 
