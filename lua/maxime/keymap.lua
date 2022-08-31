@@ -38,3 +38,7 @@ vim.keymap.set('n', "<leader>/",
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
 -- NvimTree
 vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
+
+
+-- Markdown
+vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")
