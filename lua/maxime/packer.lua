@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use 'mg979/vim-visual-multi'
     -- LSP
     use {
         "williamboman/mason.nvim",
@@ -60,7 +61,6 @@ return require('packer').startup(function(use)
     })
     -- debugging
     use 'mfussenegger/nvim-dap'
-
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'nvim-telescope/telescope-dap.nvim'
