@@ -75,4 +75,10 @@ return require('packer').startup(function(use)
             }
         end
     }
+    use "tpope/vim-repeat" -- Repeat actions better
+    use "tpope/vim-surround" -- Surround text objects easily
+    use {
+        "AndrewRadev/splitjoin.vim",
+        keys = { "gJ", "gS" },
+    }
 end)
