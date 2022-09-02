@@ -81,4 +81,13 @@ return require('packer').startup(function(use)
         "AndrewRadev/splitjoin.vim",
         keys = { "gJ", "gS" },
     }
+
+    -- Pretty colors
+    use "norcalli/nvim-colorizer.lua"
+    use {
+        "norcalli/nvim-terminal.lua",
+        config = function()
+            require("terminal").setup()
+        end,
+    }
 end)
