@@ -1,6 +1,9 @@
 -- Basic keymaps
 vim.keymap.set('i', '§', '\\')
 vim.keymap.set('n', 'ù', '#')
+
+-- hide search highlight by pressing esc
+vim.keymap.set('n', '<esc>', '<cmd>:noh<CR>')
 vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
