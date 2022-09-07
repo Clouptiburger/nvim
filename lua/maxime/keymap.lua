@@ -39,7 +39,7 @@ vim.keymap.set('n', "<leader>fd", require('telescope.builtin').diagnostics)
 vim.keymap.set('n', "<leader>/",
     function() require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy()) end)
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
-vim.keymap.set('n', "<leader>wt", require('telescope.builtin').treesitter)
+vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter)
 -- NvimTree
 vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
 
