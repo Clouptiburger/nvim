@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     use 'tjdevries/colorbuddy.vim'
     use 'tjdevries/gruvbuddy.nvim'
+    use 'folke/tokyonight.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'doums/darcula'
     --use 'feline-nvim/feline.nvim'
