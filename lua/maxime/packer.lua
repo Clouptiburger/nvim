@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
     use 'tjdevries/colorbuddy.vim'
     use 'tjdevries/gruvbuddy.nvim'
     use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'doums/darcula'
