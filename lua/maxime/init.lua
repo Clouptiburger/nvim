@@ -1,7 +1,6 @@
 require("maxime.packer")
 require('maxime.set')
 require("maxime.keymap")
-require("maxime.colors")
 require("maxime.lsp")
 require("maxime.dap")
 require("maxime.cmp")
