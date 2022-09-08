@@ -1,5 +1,5 @@
 -- vim.cmd "colorscheme darcula"
-require('lualine').setup{options = { theme = 'tokyonight' }}
+require('lualine').setup{options = { theme = 'catppuccin' }}
 -- require('colorbuddy').colorscheme('gruvbuddy')
 -- vim.cmd "colorscheme tokyonight"
 -- vim.cmd "colorscheme darcula" 
