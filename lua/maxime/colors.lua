@@ -1,10 +1,49 @@
 -- vim.cmd "colorscheme darcula"
-require('lualine').setup{options = { theme = 'catppuccin' }}
+require('lualine').setup { options = { theme = 'catppuccin' } }
 -- require('colorbuddy').colorscheme('gruvbuddy')
 -- vim.cmd "colorscheme tokyonight"
--- vim.cmd "colorscheme darcula" 
--- require('onedark').load()
+-- vim.cmd "colorscheme darcula"
+require('onedark').load()
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-require("catppuccin").setup()
-vim.cmd [[colorscheme catppuccin]]
+-- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+-- require("catppuccin").setup({
+--     transparent_background = false,
+--     term_colors = true,
+--     compile = {
+--         enabled = false,
+--         path = vim.fn.stdpath("cache") .. "/catppuccin",
+--     },
+--     dim_inactive = {
+--         enabled = false,
+--         shade = "dark",
+--         percentage = 0.15,
+--     },
+--     styles = {
+--         comments = {},
+--         functions = {},
+--         keywords = {},
+--         strings = {},
+--         variables = {},
+--         conditionals = {},
+--         loops = {},
+--         numbers = {},
+--         booleans = {},
+--         properties = {},
+--         types = {},
+--         operators = {},
+--     },
+--     integrations = {
+--         cmp = true,
+--         markdown = true,
+--         neogit = true,
+--         notify = true,
+--         treesitter = true,
+--         treesitter_context = true,
+--         telescope = true,
+--         which_key = true,
+--         -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+--     },
+--     color_overrides = {},
+--     highlight_overrides = {},
+-- })
+-- vim.cmd "colorscheme catppuccin"

@@ -1,6 +1,7 @@
 import numpy
 
-
+# test comment 
+"string" 
 numpy.amax
 
 
