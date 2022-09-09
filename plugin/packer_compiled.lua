@@ -85,11 +85,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  catppuccin = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -104,26 +99,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["colorbuddy.vim"] = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\colorbuddy.vim",
-    url = "https://github.com/tjdevries/colorbuddy.vim"
-  },
-  darcula = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\darcula",
-    url = "https://github.com/doums/darcula"
-  },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["gruvbuddy.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbuddy.nvim",
-    url = "https://github.com/tjdevries/gruvbuddy.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -191,11 +166,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-terminal.lua",
     url = "https://github.com/norcalli/nvim-terminal.lua"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
@@ -248,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\MAXIME\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-repeat"] = {
     loaded = true,

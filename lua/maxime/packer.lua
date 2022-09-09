@@ -8,27 +8,41 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
+    --  NOT USING THIS FOR THE MOMENT
+    -- use {
+    --     'kyazdani42/nvim-tree.lua',
+    --     requires = {
+    --         'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    --     },
+    --     tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    -- }
+
+    -- Telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
-    use { "ellisonleao/gruvbox.nvim" }
-    use 'tjdevries/colorbuddy.vim'
-    use 'tjdevries/gruvbuddy.nvim'
-    use 'folke/tokyonight.nvim'
+
+    -- Colors
     use 'navarasu/onedark.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    -- use { "ellisonleao/gruvbox.nvim" }
+    -- use 'tjdevries/colorbuddy.vim'
+    -- use 'tjdevries/gruvbuddy.nvim'
+    -- use 'folke/tokyonight.nvim'
+    -- use { "catppuccin/nvim", as = "catppuccin" }
+    -- use 'doums/darcula'
+
+    -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/nvim-treesitter-context'
-    use 'doums/darcula'
     --use 'feline-nvim/feline.nvim'
     -- 	use 'vim-airline/vim-airline'
     -- 	use 'vim-airline/vim-airline-themes'
+
+
+    -- Other tools
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -36,6 +50,9 @@ return require('packer').startup(function(use)
         end
     }
     use 'mg979/vim-visual-multi'
+
+
+
     -- LSP
     use {
         "williamboman/mason.nvim",
@@ -48,10 +65,6 @@ return require('packer').startup(function(use)
     --use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     --use 'kabouzeid/nvim-lspinstall'
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'L3MON4D3/LuaSnip'
     --     use {
