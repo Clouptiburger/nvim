@@ -1,7 +1,7 @@
 import numpy
 
-# test comment 
-"string" 
+# test comment
+"string"
 numpy.amax
 
 
@@ -10,6 +10,9 @@ def function(test: str):
 
 
 class MyPythonClass(object):
+    """
+    test test 
+    """
     id = ""
     attr = None
 
@@ -29,5 +32,4 @@ test = function(1)
 if __name__ == "__main__":
     a = 2 + 1
     myStr = function("coucou")
-
-
+    instance = MyPythonClass("identifier")
