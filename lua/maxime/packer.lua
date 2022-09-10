@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    use "ThePrimeagen/harpoon"
 
     -- Colors
     use 'navarasu/onedark.nvim'
@@ -65,8 +68,13 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     --use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+    use { 'saadparwaiz1/cmp_luasnip' }
     --use 'kabouzeid/nvim-lspinstall'
     use 'jose-elias-alvarez/null-ls.nvim'
+    use "j-hui/fidget.nvim"
+    use "onsails/lspkind.nvim"
+
+
     use 'L3MON4D3/LuaSnip'
     --     use {
     --         "windwp/nvim-autopairs",
@@ -93,8 +101,9 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use "tpope/vim-repeat" -- Repeat actions better
-    use "tpope/vim-surround" -- Surround text objects easily
+
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat"
     use {
         "AndrewRadev/splitjoin.vim",
         keys = { "gJ", "gS" },

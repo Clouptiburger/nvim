@@ -3,6 +3,7 @@ require('maxime.set')
 require("maxime.keymap")
 require("maxime.lsp")
 require("maxime.dap")
+require('maxime.luasnip')
 require("maxime.cmp")
 require("maxime.treesitter")
 vim.api.nvim_create_autocmd("TextYankPost", {

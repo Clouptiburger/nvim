@@ -1,4 +1,3 @@
-print("j'arrive dans le module")
 local myFunctions = {}
 
 myFunctions.myPrint = function()
