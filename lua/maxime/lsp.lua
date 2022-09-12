@@ -61,6 +61,11 @@ require("lspconfig")["lemminx"].setup({
     on_attach = on_attach,
     flags = lsp_flags,
 })
+require("lspconfig")["marksman"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+})
 require("lspconfig")["rust_analyzer"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
@@ -100,6 +105,7 @@ require("lspconfig")["sumneko_lua"].setup({
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.autopep8,
+        require("null-ls").builtins.formatting.prettierd,
         --         require("null-ls").builtins.diagnostics.eslint,
         --         require("null-ls").builtins.completion.spell,
         --         require("null-ls").builtins.completion.luasnip,

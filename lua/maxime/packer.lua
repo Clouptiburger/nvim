@@ -73,6 +73,11 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use "j-hui/fidget.nvim"
     use "onsails/lspkind.nvim"
+    use {
+      "prettier/vim-prettier",
+      ft = { "html", "javascript", "typescript", "typescriptreact" },
+      run = "yarn install",
+    }
 
 
     use 'L3MON4D3/LuaSnip'
