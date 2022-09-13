@@ -43,8 +43,16 @@ ls.config.set_config {
 
 ls.add_snippets("python", {
     s("main", {
-        t({'if __name__ == "__main__":', "    "}),
+        t({ 'if __name__ == "__main__":', "    " }),
         i(1)
     })
 })
-
+ls.add_snippets("all", {
+    -- date -> Tue 16 Nov 2021 09:43:49 AM EST
+    s({ trig = "date" }, {
+        f(function()
+            -- return string.format(string.gsub(vim.bo.commentstring, "%%s", " %%s"), os.date())
+            return string.format(os.date())
+        end, {}),
+    })
+})
