@@ -52,12 +52,12 @@ vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
 vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")
 
 
-vim.keymap.set('n', "<M-h><M-m>", require("harpoon.mark").add_file)
-vim.keymap.set('n', "<M-h><M-l>", require("harpoon.ui").toggle_quick_menu)
+vim.keymap.set('n', "<leader>a", require("harpoon.mark").add_file)
+vim.keymap.set('n', "<leader>h", require("harpoon.ui").toggle_quick_menu)
 
 for i = 1, 5 do
     vim.keymap.set('n',
-        string.format("<space>%s", i),
+        string.format("<leader>%s", i),
         function()
             require("harpoon.ui").nav_file(i)
         end
