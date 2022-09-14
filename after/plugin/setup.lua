@@ -28,3 +28,5 @@ require("fidget").setup {
         relative = "editor",
     },
 }
+
+require('Comment').setup()

@@ -47,10 +47,10 @@ return require('packer').startup(function(use)
 
     -- Other tools
     use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        'numToStr/Comment.nvim'
+        -- config = function()
+        --     require('Comment').setup()
+        -- end
     }
     use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
