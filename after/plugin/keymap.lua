@@ -14,9 +14,18 @@ vim.keymap.set('n', '<leader>--', function() vim.cmd 'set foldmethod=indent' end
 vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
 
--- -- greatest remap ever
-vim.keymap.set('x', '<leader>p', "\"_dP")
+-- -- paste without yanking
+vim.keymap.set('x', '<leader>dp', "\"_dP")
+
 -- -- next greatest remap ever : asbjornHaland
+vim.keymap.set('x', '<leader>p', "\"+p")
+vim.keymap.set('n', '<leader>p', "\"+p")
+vim.keymap.set('v', '<leader>p', "\"+p")
+
+vim.keymap.set('x', '<leader>P', "\"+P")
+vim.keymap.set('n', '<leader>P', "\"+P")
+vim.keymap.set('v', '<leader>P', "\"+P")
+
 vim.keymap.set('n', "<leader>y", "\"+y")
 vim.keymap.set('v', "<leader>y", "\"+y")
 vim.keymap.set('n', "<leader>Y", "\"+Y")
@@ -46,7 +55,7 @@ vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations)
 vim.keymap.set('n', "<space>wd", require('telescope.builtin').lsp_document_symbols)
 vim.keymap.set('n', "<space>ww", require('telescope.builtin').lsp_dynamic_workspace_symbols)
 -- NvimTree
-vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
+vim.keymap.set('n', '<leader>E', ":Ex<CR>")
 
 -- Markdown
 vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")

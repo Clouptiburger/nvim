@@ -1,7 +1,5 @@
 import numpy
-
 # test comment
-"string"
 numpy.amax
 
 
@@ -11,7 +9,7 @@ def function(test: str):
 
 class MyPythonClass(object):
     """
-    test test 
+    test test
     """
     id = ""
     attr = None
