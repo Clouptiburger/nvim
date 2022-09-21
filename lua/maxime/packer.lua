@@ -8,14 +8,14 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    --  NOT USING THIS FOR THE MOMENT
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     requires = {
-    --         'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    --     },
-    --     tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    -- }
+     -- NOT USING THIS FOR THE MOMENT
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
 
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }

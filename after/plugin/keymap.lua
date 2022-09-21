@@ -54,8 +54,9 @@ vim.keymap.set('n', "gr", require('telescope.builtin').lsp_references)
 vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations)
 vim.keymap.set('n', "<space>wd", require('telescope.builtin').lsp_document_symbols)
 vim.keymap.set('n', "<space>ww", require('telescope.builtin').lsp_dynamic_workspace_symbols)
+
 -- NvimTree
-vim.keymap.set('n', '<leader>E', ":Ex<CR>")
+vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
 
 -- Markdown
 vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")

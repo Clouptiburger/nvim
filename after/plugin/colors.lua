@@ -4,6 +4,10 @@ require('lualine').setup { options = { theme = 'onedark' } }
 -- vim.cmd "colorscheme tokyonight"
 -- vim.cmd "colorscheme darcula"
 -- Lua
+
+
+
+
 require('onedark').setup  {
     -- Main options --
     style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
