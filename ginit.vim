@@ -4,7 +4,7 @@ set mouse=a
 " Set Editor Font
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
-    GuiFont! MesloLGL Nerd Font Mono:h10:1
+    GuiFont! JetBrainsMonoNL Nerd Font Mono:h10:1
 endif 
   
 " Disable GUI Tabline
@@ -19,7 +19,7 @@ endif
 
 " Enable GUI ScrollBar
 if exists(':GuiScrollBar')
-    GuiScrollBar 1
+    GuiScrollBar 0
 endif
 
 " Right Click Context Menu (Copy-Cut-Paste)

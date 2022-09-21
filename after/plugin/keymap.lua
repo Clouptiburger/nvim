@@ -60,7 +60,7 @@ vim.keymap.set('n', '<leader>E', ":Ex<CR>")
 -- Markdown
 vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")
 
-
+-- harpoon
 vim.keymap.set('n', "<leader>a", require("harpoon.mark").add_file)
 vim.keymap.set('n', "<leader>h", require("harpoon.ui").toggle_quick_menu)
 
@@ -72,3 +72,6 @@ for i = 1, 5 do
         end
     )
 end
+
+-- Terminal 
+vim.keymap.set('t',"<Esc>" ,"<C-\\><C-n>") 
