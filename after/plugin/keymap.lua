@@ -22,6 +22,10 @@ vim.keymap.set('x', '<leader>p', "\"+p")
 vim.keymap.set('n', '<leader>p', "\"+p")
 vim.keymap.set('v', '<leader>p', "\"+p")
 
+vim.keymap.set('x', '<C-S-V>', "\"+p")
+vim.keymap.set('n', '<C-S-V>', "\"+p")
+vim.keymap.set('v', '<C-S-V>', "\"+p")
+
 vim.keymap.set('x', '<leader>P', "\"+P")
 vim.keymap.set('n', '<leader>P', "\"+P")
 vim.keymap.set('v', '<leader>P', "\"+P")
@@ -29,6 +33,7 @@ vim.keymap.set('v', '<leader>P', "\"+P")
 vim.keymap.set('n', "<leader>y", "\"+y")
 vim.keymap.set('v', "<leader>y", "\"+y")
 vim.keymap.set('n', "<leader>Y", "\"+Y")
+
 
 vim.keymap.set('n', "<leader>d", "\"_d")
 vim.keymap.set('v', "<leader>d", "\"_d")
@@ -74,5 +79,5 @@ vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")
 --     )
 -- end
 
--- Terminal 
-vim.keymap.set('t',"<Esc>" ,"<C-\\><C-n>") 
+-- Terminal
+vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
