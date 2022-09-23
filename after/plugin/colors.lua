@@ -1,3 +1,12 @@
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("highlight_yank", {}),
+    desc = "Hightlight selection on yank",
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank { higroup = "IncSearch", timeout = 50 }
+    end,
+})
 -- vim.cmd "colorscheme darcula"
 require('lualine').setup { options = { theme = 'onedark' } }
 -- require('colorbuddy').colorscheme('gruvbuddy')
@@ -6,19 +15,18 @@ require('lualine').setup { options = { theme = 'onedark' } }
 -- Lua
 
 
-
-
-require('onedark').setup  {
+-- Lua
+require('onedark').setup {
     -- Main options --
     style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = false,  -- Show/hide background
+    transparent = true, -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
     toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+    toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
     -- Change code style ---
     -- Options are italic, bold, underline, none
@@ -31,6 +39,11 @@ require('onedark').setup  {
         variables = 'none'
     },
 
+    -- Lualine options --
+    lualine = {
+        transparent = true, -- lualine center bar transparency
+    },
+
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {}, -- Override highlight groups
@@ -38,13 +51,12 @@ require('onedark').setup  {
     -- Plugins Config --
     diagnostics = {
         darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
+        undercurl = true, -- use undercurl instead of underline for diagnostics
+        background = true,  -- use background color for virtual text
     },
 }
 require('onedark').load()
 
--- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 -- require("catppuccin").setup({
 --     transparent_background = false,
 --     term_colors = true,
@@ -85,4 +97,3 @@ require('onedark').load()
 --     color_overrides = {},
 --     highlight_overrides = {},
 -- })
--- vim.cmd "colorscheme catppuccin"
