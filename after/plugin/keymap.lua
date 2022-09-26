@@ -9,7 +9,7 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
 vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 vim.keymap.set('n', '<leader>--', function() vim.cmd 'set foldmethod=indent' end)
-
+vim.keymap.set('n', '<leader>u', ":UndotreeToggle<CR>")
 -- Quick fix list short cut
 vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
