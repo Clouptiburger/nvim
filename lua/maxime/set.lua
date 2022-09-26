@@ -35,3 +35,8 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 -- vim.cmd "set foldmethod=indent"
+
+
+-- set permanent undo
+vim.opt.undodir = "~/.vim/undodir"
+vim.opt.undofile = true
