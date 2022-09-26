@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
         --     require('Comment').setup()
         -- end
     }
-    use 'mg979/vim-visual-multi'
+    -- use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
     use "mbbill/undotree"
 

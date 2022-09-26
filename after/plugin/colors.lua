@@ -57,8 +57,12 @@ require('onedark').setup {
 }
 require('onedark').load()
 
+
+-- CATPPUCCIN
+-- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+--
 -- require("catppuccin").setup({
---     transparent_background = false,
+--     transparent_background = true,
 --     term_colors = true,
 --     compile = {
 --         enabled = false,
@@ -97,3 +101,4 @@ require('onedark').load()
 --     color_overrides = {},
 --     highlight_overrides = {},
 -- })
+-- vim.cmd [[colorscheme catppuccin]]
