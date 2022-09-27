@@ -38,10 +38,10 @@ vim.g.mapleader = " "
 
 
 -- set permanent undo
-if vim.fn.has('win32') then
-    vim.opt.undodir = os.getenv("HOMEPATH") .. "/.vim/undodir"
-else
+if vim.fn.has('linux') then
     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+elseif vim.fn.has('win32') then
+    vim.opt.undodir = os.getenv("HOMEPATH") .. "/.vim/undodir"
 end
 
 vim.opt.undofile = true
