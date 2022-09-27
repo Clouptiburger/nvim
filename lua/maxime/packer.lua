@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'kyazdani42/nvim-web-devicons'
-     -- NOT USING THIS FOR THE MOMENT
+    -- NOT USING THIS FOR THE MOMENT
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -20,8 +20,8 @@ return require('packer').startup(function(use)
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     -- use "ThePrimeagen/harpoon"
 
     -- Colors
@@ -74,9 +74,9 @@ return require('packer').startup(function(use)
     use "j-hui/fidget.nvim"
     use "onsails/lspkind.nvim"
     use {
-      "prettier/vim-prettier",
-      ft = { "html", "javascript", "typescript", "typescriptreact" },
-      run = "yarn install",
+        "prettier/vim-prettier",
+        ft = { "html", "javascript", "typescript", "typescriptreact" },
+        run = "yarn install",
     }
 
 

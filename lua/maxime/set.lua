@@ -38,5 +38,5 @@ vim.g.mapleader = " "
 
 
 -- set permanent undo
-vim.opt.undodir = "~/.vim/undodir"
+vim.opt.undodir = "undodir"
 vim.opt.undofile = true
