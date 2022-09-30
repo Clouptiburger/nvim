@@ -45,6 +45,7 @@ require 'lspconfig'.pyright.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
+    -- cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
     root_dir = function(fname)
         local root_files = {
@@ -101,11 +102,14 @@ require("lspconfig")["lemminx"].setup({
     on_attach = on_attach,
     flags = lsp_flags,
 })
+
 require("lspconfig")["marksman"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
+    cmd = {vim.fn.stdpath('data') ..  "\\mason\\packages\\marksman\\marksman.exe"}, -- works on windows, lets check linux later 
 })
+
 require("lspconfig")["rust_analyzer"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
