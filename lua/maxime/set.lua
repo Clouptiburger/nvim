@@ -45,3 +45,4 @@ elseif vim.fn.has('win32') == 1 then
 end
 
 vim.opt.undofile = true
+vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }

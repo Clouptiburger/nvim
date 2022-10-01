@@ -81,3 +81,9 @@ vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")
 
 -- Terminal
 vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
+
+-- Resize window
+vim.keymap.set('n', '<C-w><left>', '<C-w><')
+vim.keymap.set('n', '<C-w><right>', '<C-w>>')
+vim.keymap.set('n', '<C-w><up>', '<C-w>+')
+vim.keymap.set('n', '<C-w><down>', '<C-w>-')
