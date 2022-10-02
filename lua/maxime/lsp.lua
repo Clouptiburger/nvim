@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "<leader>fr", vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
 end
@@ -113,7 +113,7 @@ require("lspconfig")["marksman"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-    cmd = {vim.fn.stdpath('data') ..  "\\mason\\packages\\marksman\\marksman.exe"}, -- works on windows, lets check linux later 
+    cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
 })
 
 require("lspconfig")["rust_analyzer"].setup({

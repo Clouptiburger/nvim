@@ -18,7 +18,8 @@ return require('packer').startup(function(use)
     }
 
     -- Telescope
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    -- use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    use { 'nvim-telescope/telescope.nvim'}
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use { 'nvim-telescope/telescope-fzf-native.nvim',
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -38,7 +39,10 @@ return require('packer').startup(function(use)
     -- use 'doums/darcula'
 
     -- Treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
     use 'nvim-treesitter/nvim-treesitter-context'
     --use 'feline-nvim/feline.nvim'
     -- 	use 'vim-airline/vim-airline'
@@ -73,11 +77,11 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use "j-hui/fidget.nvim"
     use "onsails/lspkind.nvim"
-    use {
-        "prettier/vim-prettier",
-        ft = { "html", "javascript", "typescript", "typescriptreact" },
-        run = "yarn install",
-    }
+    -- use {
+    --     "prettier/vim-prettier",
+    --     ft = { "html", "javascript", "typescript", "typescriptreact" },
+    --     run = "yarn install",
+    -- }
 
 
     use 'L3MON4D3/LuaSnip'
