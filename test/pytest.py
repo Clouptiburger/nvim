@@ -2,8 +2,8 @@ import numpy
 
 
 # test comment
-numpy.amax
 
+numpy.amax
 
 def function(test: str):
     return test

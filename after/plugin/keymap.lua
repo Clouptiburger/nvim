@@ -15,20 +15,20 @@ vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
 
 -- -- paste without yanking
-vim.keymap.set('x', '<leader>dp', "\"_dP")
+vim.keymap.set('x', '<leader>p', "\"_dP")
 
--- -- next greatest remap ever : asbjornHaland
-vim.keymap.set('x', '<leader>p', "\"+p")
-vim.keymap.set('n', '<leader>p', "\"+p")
-vim.keymap.set('v', '<leader>p', "\"+p")
+-- -- -- next greatest remap ever : asbjornHaland
+-- vim.keymap.set('x', '<leader>p', "\"+p")
+-- vim.keymap.set('n', '<leader>p', "\"+p")
+-- vim.keymap.set('v', '<leader>p', "\"+p")
 
-vim.keymap.set('x', '<C-S-V>', "\"+p")
-vim.keymap.set('n', '<C-S-V>', "\"+p")
-vim.keymap.set('v', '<C-S-V>', "\"+p")
+-- vim.keymap.set('x', '<C-S-V>', "\"+p")
+-- vim.keymap.set('n', '<C-S-V>', "\"+p")
+-- vim.keymap.set('v', '<C-S-V>', "\"+p")
 
-vim.keymap.set('x', '<leader>P', "\"+P")
-vim.keymap.set('n', '<leader>P', "\"+P")
-vim.keymap.set('v', '<leader>P', "\"+P")
+-- vim.keymap.set('x', '<leader>P', "\"+P")
+-- vim.keymap.set('n', '<leader>P', "\"+P")
+-- vim.keymap.set('v', '<leader>P', "\"+P")
 
 vim.keymap.set('n', "<leader>y", "\"+y")
 vim.keymap.set('v', "<leader>y", "\"+y")
