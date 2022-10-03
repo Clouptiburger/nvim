@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
 
     -- Telescope
     -- use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
-    use { 'nvim-telescope/telescope.nvim'}
+    use { 'nvim-telescope/telescope.nvim' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use { 'nvim-telescope/telescope-fzf-native.nvim',
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -80,6 +80,18 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use "j-hui/fidget.nvim"
     use "onsails/lspkind.nvim"
+    -- seems nice but heavy
+    -- use({
+    --     "glepnir/lspsaga.nvim",
+    --     branch = "main",
+    --     config = function()
+    --         local saga = require("lspsaga")
+    --
+    --         saga.init_lsp_saga({
+    --             -- your configuration
+    --         })
+    --     end,
+    -- })
     -- use {
     --     "prettier/vim-prettier",
     --     ft = { "html", "javascript", "typescript", "typescriptreact" },

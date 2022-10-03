@@ -55,8 +55,10 @@ vim.keymap.set('n', "<leader>/",
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
 vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter)
 vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin)
+
 vim.keymap.set('n', "gr", require('telescope.builtin').lsp_references)
 vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations)
+
 vim.keymap.set('n', "<leader>wd", require('telescope.builtin').lsp_document_symbols)
 vim.keymap.set('n', "<leader>ww", require('telescope.builtin').lsp_dynamic_workspace_symbols)
 

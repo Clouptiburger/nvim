@@ -5,8 +5,13 @@ import numpy
 
 numpy.amax
 
+
 def function(test: str):
     return test
+
+
+def printer(message: str):
+    print(message)
 
 
 class MyPythonClass(object):
@@ -25,6 +30,9 @@ class MyPythonClass(object):
         self.attr = arg
         print(f"set attr with argument {arg}")
 
+    def bMethod(self, message):
+        printer(message)
+
 
 test = function(1)
 if __name__ == "__main__":
@@ -35,3 +43,5 @@ if __name__ == "__main__":
         print(a)
     for i in range(5):
         print("coucou")
+
+    printer("a message")
