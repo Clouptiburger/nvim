@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
     use 'nvim-treesitter/nvim-treesitter-context'
+    use "nvim-treesitter/playground"
+    use "danymat/neogen"
+    use "nvim-treesitter/nvim-treesitter-textobjects"
     --use 'feline-nvim/feline.nvim'
     -- 	use 'vim-airline/vim-airline'
     -- 	use 'vim-airline/vim-airline-themes'
