@@ -13,6 +13,7 @@ vim.keymap.set('n', "<leader>dE", function()
     require("dapui").eval(vim.fn.input "[DAP] Expression > ")
 end)
 require('nvim-dap-virtual-text').setup()
+-- require('dap-python').setup(vim.fn.stdpath('data') .. "\\mason\\packages\\debugpy\\venv\\Scripts\\python")
 require('dap-python').setup()
 require('dapui').setup()
 
