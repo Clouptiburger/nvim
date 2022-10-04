@@ -8,6 +8,7 @@ vim.opt.errorbells = false
 
 
 vim.opt.smartindent = true
+vim.opt.smarttab = true
 
 
 vim.opt.wrap = false
@@ -19,7 +20,7 @@ vim.opt.expandtab = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
