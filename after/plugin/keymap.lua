@@ -64,8 +64,8 @@ vim.keymap.set('n', "<leader>wd", require('telescope.builtin').lsp_document_symb
 vim.keymap.set('n', "<leader>ww", require('telescope.builtin').lsp_dynamic_workspace_symbols)
 
 -- Git
-vim.keymap.set('n', "<leader>gs", require('telescope.builtin').git_status)
-vim.keymap.set('n', "<leader>gc", require('telescope.builtin').git_commits)
+-- vim.keymap.set('n', "<leader>fgs", require('telescope.builtin').git_status)
+-- vim.keymap.set('n', "<leader>fgc", require('telescope.builtin').git_commits)
 
 -- NvimTree
 vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")

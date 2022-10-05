@@ -47,6 +47,8 @@ return require('packer').startup(function(use)
     use "nvim-treesitter/playground"
     use "danymat/neogen"
     use "nvim-treesitter/nvim-treesitter-textobjects"
+
+
     --use 'feline-nvim/feline.nvim'
     -- 	use 'vim-airline/vim-airline'
     -- 	use 'vim-airline/vim-airline-themes'
@@ -141,4 +143,40 @@ return require('packer').startup(function(use)
             require("terminal").setup()
         end,
     }
+
+    -- GIT:
+    use "TimUntersberger/neogit"
+
+    -- -- Github integration
+    -- if vim.fn.executable "gh" == 1 then
+    --     use "pwntester/octo.nvim"
+    -- end
+    -- use "ruifm/gitlinker.nvim"
+
+    -- Sweet message committer
+    -- use "rhysd/committia.vim"
+    use "sindrets/diffview.nvim"
+
+    -- -- Floating windows are awesome :)
+    -- use {
+    --     "rhysd/git-messenger.vim",
+    --     keys = "<Plug>(git-messenger)",
+    -- }
+
+    -- Async signs!
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+
+    -- -- Git worktree utility
+    -- use {
+    --     "ThePrimeagen/git-worktree.nvim",
+    --     config = function()
+    --         require("git-worktree").setup {}
+    --     end,
+    -- }
+
 end)
