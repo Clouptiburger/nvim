@@ -15,7 +15,7 @@ vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
 
 -- -- paste without yanking
-vim.keymap.set('x', '<leader>p', "\"_dp")
+vim.keymap.set('x', '<leader>p', "\"_dP")
 vim.keymap.set('n', 'x', '"_x') -- no yank with x
 
 -- -- -- next greatest remap ever : asbjornHaland
