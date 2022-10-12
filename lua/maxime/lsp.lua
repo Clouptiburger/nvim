@@ -40,7 +40,16 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 local util = require 'lspconfig/util'
---
+
+local find_svn_ancestor = function(startpath)
+    return util.search_ancestors(startpath, function(path)
+        -- Support git directories and git files (worktrees)
+        if util.path.is_dir(util.path.join(path, '.svn')) or util.path.is_file(util.path.join(path, '.svn')) then
+            return path
+        end
+    end)
+end
+
 require 'lspconfig'.pyright.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -56,7 +65,8 @@ require 'lspconfig'.pyright.setup {
             'Pipfile',
             'pyrightconfig.json',
         }
-        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or find_svn_ancestor(fname)
+            or util.path.dirname(fname)
     end,
     settings = {
         python = {
