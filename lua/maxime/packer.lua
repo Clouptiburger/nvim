@@ -1,4 +1,4 @@
---p_implementations This file can be loaded by calling `lua require('plugins')` from your init.vim
+--p_implementations This file can be loaded by calling `lua require('plugins')` from your init.vimpacker
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
     -- use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
     use "mbbill/undotree"
-
+    use 'windwp/nvim-spectre'
 
     -- LSP
     use {
@@ -82,6 +82,17 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use "j-hui/fidget.nvim"
     use "onsails/lspkind.nvim"
+    use { 'simrat39/symbols-outline.nvim',
+        config = function()
+            require('symbols-outline').setup()
+        end }
+    use 'folke/lsp-colors.nvim'
+    use {
+        "ray-x/lsp_signature.nvim",
+        config = function()
+            require('lsp_signature').setup()
+        end
+    }
     -- seems nice but heavy
     -- use({
     --     "glepnir/lspsaga.nvim",
@@ -136,13 +147,13 @@ return require('packer').startup(function(use)
     }
 
     -- Pretty colors
-    use "norcalli/nvim-colorizer.lua"
-    use {
-        "norcalli/nvim-terminal.lua",
-        config = function()
-            require("terminal").setup()
-        end,
-    }
+    -- use "norcalli/nvim-colorizer.lua"
+    -- use {
+    --     "norcalli/nvim-terminal.lua",
+    --     config = function()
+    --         require("terminal").setup()
+    --     end,
+    -- }
 
     -- GIT:
     use "TimUntersberger/neogit"
