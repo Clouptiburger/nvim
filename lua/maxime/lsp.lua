@@ -1,5 +1,8 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup(
+    { ensure_installed = { "sumneko_lua", "rust_analyzer", "pyright", "marksman", "lemminx", "html", "tsserver", "cssls",
+        "clangd" } }
+)
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
