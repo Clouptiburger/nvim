@@ -170,8 +170,9 @@ require("lspconfig")["sumneko_lua"].setup({
 
 require("null-ls").setup({
     sources = {
-        require("null-ls").builtins.formatting.autopep8,
-        require("null-ls").builtins.formatting.prettier,
+        -- require("null-ls").builtins.formatting.autopep8,
+        require("null-ls").builtins.formatting.prettierd,
+        require("null-ls").builtins.formatting.black,
         --         require("null-ls").builtins.diagnostics.eslint,
         --         require("null-ls").builtins.completion.spell,
         --         require("null-ls").builtins.completion.luasnip,
