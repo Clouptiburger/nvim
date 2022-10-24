@@ -20,14 +20,7 @@ local swap_next, swap_prev = (function()
 end)()
 
 require("nvim-treesitter.configs").setup {
-    ensure_installed = {
-        "html",
-        "javascript",
-        "json",
-        "markdown",
-        "python",
-        "typescript",
-    },
+    ensure_installed = "all",
 
     highlight = {
         enable = true,
