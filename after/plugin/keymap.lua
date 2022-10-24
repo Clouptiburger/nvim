@@ -43,7 +43,7 @@ vim.keymap.set('v', "<leader>d", "\"_d")
 
 -- Telescope
 -- Using Lua functions
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').fd)
 vim.keymap.set('n', "<leader>fg", require('telescope.builtin').live_grep)
 vim.keymap.set('n', "<leader>fb", require('telescope.builtin').buffers)
 vim.keymap.set('n', "<leader>fo", require('telescope.builtin').oldfiles)
