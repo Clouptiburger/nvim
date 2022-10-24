@@ -1,5 +1,5 @@
 vim.cmd "set mouse=a"
-
+vim.cmd "lan en_US.UTF-8"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
