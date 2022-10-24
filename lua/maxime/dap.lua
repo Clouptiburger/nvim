@@ -13,8 +13,16 @@ vim.keymap.set('n', "<leader>dE", function()
     require("dapui").eval(vim.fn.input "[DAP] Expression > ")
 end)
 require('nvim-dap-virtual-text').setup()
--- require('dap-python').setup(vim.fn.stdpath('data') .. "\\mason\\packages\\debugpy\\venv\\Scripts\\python")
-require('dap-python').setup()
+
+local dap_python = require "dap-python"
+dap_python.setup("python", {
+    -- So if configured correctly, this will open up new terminal.
+    --    Could probably get this to target a particular terminal
+    --    and/or add a tab to kitty or something like that as well.
+
+    include_configs = true,
+})
+
 require('dapui').setup()
 
 local dap, dapui = require('dap'), require('dapui')
