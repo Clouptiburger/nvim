@@ -56,3 +56,21 @@ ls.add_snippets("all", {
         end, {}),
     })
 })
+
+ls.add_snippets("html", {
+    s("html:5", {
+        t({ [[<!DOCTYPE html>]], "" }),
+        t({ [[<html lang="en">]], "\t" }),
+        t({ [[<head>]], "\t\t" }),
+        t({ [[<meta charset="UTF-8">]], "\t\t" }),
+        t({ [[<meta http-equiv="X-UA-Compatible" content="IE=edge">]], "\t\t" }),
+        t({ [[<meta name="viewport" content="width=device-width, initial-scale=1.0">]], "\t\t" }),
+        t({ [[<title>Document</title>]], "\t\t" }),
+        t({ [[</head>]], "\t" }),
+
+        t({ [[<body>]] }),
+        i(1),
+        t({ [[</body>]], "" }),
+        t({ [[</html>]] }),
+    })
+})

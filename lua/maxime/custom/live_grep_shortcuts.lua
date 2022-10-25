@@ -9,7 +9,7 @@ local flatten = vim.tbl_flatten
 -- and have telescope do some filtering on files and some grepping
 
 -- my settings :
-local regexp = false
+local regexp = true
 
 
 return function(opts)
