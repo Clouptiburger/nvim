@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    -- use { "ellisonleao/gruvbox.nvim" }
+    use { "ellisonleao/gruvbox.nvim" }
     -- use 'tjdevries/colorbuddy.vim'
     -- use 'tjdevries/gruvbuddy.nvim'
     -- use 'folke/tokyonight.nvim'
@@ -65,7 +65,22 @@ return require('packer').startup(function(use)
     use 'psliwka/vim-smoothie'
     use "mbbill/undotree"
     use 'windwp/nvim-spectre'
-
+    -- Packer
+    use({
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = function()
+            require("noice").setup()
+        end,
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    })
     -- LSP
     use {
         "williamboman/mason.nvim",

@@ -1,3 +1,5 @@
+require 'nvim-treesitter.install'.compilers = { "clang" }
+
 local swap_next, swap_prev = (function()
     local swap_objects = {
         p = "@parameter.inner",
@@ -20,7 +22,9 @@ local swap_next, swap_prev = (function()
 end)()
 
 require("nvim-treesitter.configs").setup {
-    ensure_installed = "all",
+    ensure_installed = { "python",
+        "html", "css", "typescript", "javascript", "go", "rust", "c", "markdown", "lua", "cpp", "bash", "dockerfile",
+        "gitattributes", "http", "java", "json", "regex", "scss", "toml", "vim", "yaml" },
 
     highlight = {
         enable = true,

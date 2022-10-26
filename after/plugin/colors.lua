@@ -25,7 +25,7 @@ require('onedark').setup {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
-    toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+    toggle_style_key = "<leader>ts", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
     toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
     -- Change code style ---
@@ -46,17 +46,18 @@ require('onedark').setup {
 
     -- Custom Highlights --
     colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+    highlights = {
+        Normal = { bg = "#1A0B29" },
+    }, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {
         darker = true, -- darker colors for diagnostic
         undercurl = true, -- use undercurl instead of underline for diagnostics
-        background = true,  -- use background color for virtual text
+        background = true, -- use background color for virtual text
     },
 }
 require('onedark').load()
-
 
 -- CATPPUCCIN
 -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
@@ -102,3 +103,30 @@ require('onedark').load()
 --     highlight_overrides = {},
 -- })
 -- vim.cmd [[colorscheme catppuccin]]
+
+
+
+
+-- vim.o.background = "dark" -- or "light" for light mode
+-- require("gruvbox").setup({
+--     undercurl = true,
+--     underline = true,
+--     bold = true,
+--     italic = false,
+--     strikethrough = true,
+--     invert_selection = false,
+--     invert_signs = false,
+--     invert_tabline = false,
+--     invert_intend_guides = false,
+--     inverse = true, -- invert background for search, diffs, statuslines and errors
+--     contrast = "", -- can be "hard", "soft" or empty string
+--     palette_overrides = {},
+--     overrides = {
+--         Normal = { bg = "#1A0B29" }
+--     }
+--     ,
+--     dim_inactive = false,
+--     transparent_mode = true,
+-- })
+--
+-- vim.cmd([[colorscheme gruvbox]])
