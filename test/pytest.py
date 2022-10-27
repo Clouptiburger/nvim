@@ -17,7 +17,6 @@ class MyPythonClass(object):
     """
     test test
     """
-
     id = ""
     attr = None
 

@@ -15,6 +15,8 @@ end)
 require('nvim-dap-virtual-text').setup()
 
 local dap_python = require "dap-python"
+require('dap-go').setup()
+
 dap_python.setup("python", {
     -- So if configured correctly, this will open up new terminal.
     --    Could probably get this to target a particular terminal
