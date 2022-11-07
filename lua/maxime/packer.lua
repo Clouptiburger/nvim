@@ -66,21 +66,21 @@ return require('packer').startup(function(use)
     use "mbbill/undotree"
     use 'windwp/nvim-spectre'
     -- Packer
-    use({
-        "folke/noice.nvim",
-        event = "VimEnter",
-        config = function()
-            require("noice").setup()
-        end,
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
-    })
+    -- use({
+    --     "folke/noice.nvim",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require("noice").setup()
+    --     end,
+    --     requires = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         -- OPTIONAL:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   If not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- })
     use {
         "smjonas/live-command.nvim",
         -- live-command supports semantic versioning via tags
@@ -224,5 +224,23 @@ return require('packer').startup(function(use)
     --         require("git-worktree").setup {}
     --     end,
     -- }
+
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+
+            saga.init_lsp_saga({
+                symbol_in_winbar = {
+                    in_custom = true
+                }
+            })
+        end,
+    })
+    use {
+        'kdheepak/tabline.nvim',
+        requires = { 'hoob3rt/lualine.nvim', 'kyazdani42/nvim-web-devicons' }
+    }
 
 end)

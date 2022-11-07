@@ -2,6 +2,21 @@
 vim.keymap.set('i', '§', '\\')
 vim.keymap.set('n', 'ù', '#')
 
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('i', "<A-k>", "<Esc>:m .-2<CR>==gi")
+
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('n', "<A-j>", ":m .+1<CR>==")
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('n', "<A-k>", ":m .-2<CR>==")
+
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv-gv")
+-- Move current line / block with Alt-j/k ala vscode.
+vim.keymap.set('v', "<A-k>", ":m '<-2<CR>gv-gv")
+
 -- hide search highlight by pressing esc
 vim.keymap.set('n', '<esc>', '<cmd>:noh<CR>')
 vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
@@ -58,7 +73,7 @@ vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
 vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter)
 vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin)
 
-vim.keymap.set('n', "gr", require('telescope.builtin').lsp_references)
+vim.keymap.set('n', "gR", require('telescope.builtin').lsp_references)
 vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations)
 
 vim.keymap.set('n', "<leader>wd", require('telescope.builtin').lsp_document_symbols)
@@ -110,3 +125,7 @@ vim.keymap.set('n', '<leader>S', require('spectre').open)
 vim.keymap.set('n', '<leader>sw', function() require('spectre').open_visual({ selected_word = true }) end)
 vim.keymap.set('v', '<leader>s', require('spectre').open_visual)
 vim.keymap.set('n', '<leader>sf', require('spectre').open_file_search)
+
+-- tabline
+vim.keymap.set('n', 'gt', ":TablineBufferNext<CR>")
+vim.keymap.set('n', 'gT', ":TablineBufferPrevious<CR>")

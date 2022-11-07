@@ -8,7 +8,33 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 -- vim.cmd "colorscheme darcula"
-require('lualine').setup { options = { theme = 'onedark' } }
+require('lualine').setup { options = { theme = 'auto',
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+},
+    sections = {
+        lualine_c = {
+            {
+                'filename',
+                file_status = true, -- displays file status (readonly status, modified status)
+                path = 2 -- 0 = just filename, 1 = relative path, 2 = absolute path
+            }
+        }
+    },
+    tabline = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { require 'tabline'.tabline_buffers },
+        lualine_x = { require 'tabline'.tabline_tabs },
+        lualine_y = {},
+        lualine_z = {},
+    },
+}
+
+require 'tabline'.setup { options = {
+    show_filename_only = true,
+    modified_italic = false
+} }
 -- require('colorbuddy').colorscheme('gruvbuddy')
 -- vim.cmd "colorscheme tokyonight"
 -- vim.cmd "colorscheme darcula"
