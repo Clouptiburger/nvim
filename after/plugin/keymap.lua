@@ -1,6 +1,7 @@
 -- Basic keymaps
 vim.keymap.set('i', '§', '\\')
 vim.keymap.set('n', 'ù', '#')
+vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 
 -- Move current line / block with Alt-j/k ala vscode.
 vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
