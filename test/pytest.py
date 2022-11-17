@@ -34,7 +34,6 @@ class MyPythonClass(object):
         printer(message)
 
 
-
 test = function(1)
 if __name__ == "__main__":
     a = 2 + 1

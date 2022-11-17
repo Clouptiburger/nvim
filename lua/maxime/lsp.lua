@@ -47,42 +47,47 @@ local util = require 'lspconfig/util'
 
 local find_svn_ancestor = function(startpath)
     return util.search_ancestors(startpath, function(path)
-        -- Support git directories and git files (worktrees)
         if util.path.is_dir(util.path.join(path, '.svn')) or util.path.is_file(util.path.join(path, '.svn')) then
             return path
         end
     end)
 end
 
-require 'lspconfig'.pyright.setup {
+require("lspconfig")["pylsp"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-    -- cmd = { "pyright-langserver", "--stdio" },
-    filetypes = { "python" },
-    root_dir = function(fname)
-        local root_files = {
-            'pyproject.toml',
-            'setup.py',
-            'setup.cfg',
-            'requirements.txt',
-            'Pipfile',
-            'pyrightconfig.json',
-        }
-        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or find_svn_ancestor(fname)
-            or util.path.dirname(fname)
-    end,
-    settings = {
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                useLibraryCodeForTypes = false,
-                typeCheckingMode = "off",
-            },
-        },
-    },
-}
+})
+
+-- require 'lspconfig'.pyright.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     -- cmd = { "pyright-langserver", "--stdio" },
+--     filetypes = { "python" },
+--     root_dir = function(fname)
+--         local root_files = {
+--             'pyproject.toml',
+--             'setup.py',
+--             'setup.cfg',
+--             'requirements.txt',
+--             'Pipfile',
+--             'pyrightconfig.json',
+--         }
+--         return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or find_svn_ancestor(fname)
+--             or util.path.dirname(fname)
+--     end,
+--     settings = {
+--         python = {
+--             analysis = {
+--                 autoSearchPaths = true,
+--                 diagnosticMode = "workspace",
+--                 useLibraryCodeForTypes = false,
+--                 typeCheckingMode = "off",
+--             },
+--         },
+--     },
+-- }
 -- require("lspconfig")["pyright"].setup({
 --     capabilities = capabilities,
 --     on_attach = on_attach,
