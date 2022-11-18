@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     -- use 'tjdevries/colorbuddy.vim'
     -- use 'tjdevries/gruvbuddy.nvim'
-    -- use 'folke/tokyonight.nvim'
+    use 'folke/tokyonight.nvim'
     -- use { "catppuccin/nvim", as = "catppuccin" }
     -- use 'doums/darcula'
 
