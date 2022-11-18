@@ -61,10 +61,12 @@ return require('packer').startup(function(use)
         --     require('Comment').setup()
         -- end
     }
+    use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
     use "mbbill/undotree"
     use 'windwp/nvim-spectre'
+    use "tpope/vim-sleuth"
     -- Packer
     -- use({
     --     "folke/noice.nvim",
@@ -192,7 +194,8 @@ return require('packer').startup(function(use)
 
     -- GIT:
     use "TimUntersberger/neogit"
-
+    use "tpope/vim-fugitive"
+    use "tpope/vim-rhubarb"
     -- -- Github integration
     -- if vim.fn.executable "gh" == 1 then
     --     use "pwntester/octo.nvim"
