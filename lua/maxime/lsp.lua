@@ -4,6 +4,7 @@ require("mason-lspconfig").setup(
         "clangd" } }
 )
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local util = require 'lspconfig/util'
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- local opts = { noremap = true, silent = true }
@@ -43,7 +44,6 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
-local util = require 'lspconfig/util'
 
 local find_svn_ancestor = function(startpath)
     return util.search_ancestors(startpath, function(path)
@@ -53,12 +53,33 @@ local find_svn_ancestor = function(startpath)
     end)
 end
 
+local find_any_ancestor = function(startpath, ancestor)
+    return util.search_ancestors(startpath, function(path)
+        if util.path.is_dir(util.path.join(path, ancestor)) or util.path.is_file(util.path.join(path, ancestor)) then
+            return path
+        end
+    end)
+end
 -- require("lspconfig")["pylsp"].setup({
 --     capabilities = capabilities,
 --     on_attach = on_attach,
 --     flags = lsp_flags,
 -- })
 --
+-- require("lspconfig")["pyright"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     single_file_support = true,
+--     settings = {
+--         python = {
+--             analysis = {
+--                 typeCheckingMode = "off",
+--             },
+--         },
+--     }
+-- })
+
 require 'lspconfig'.pyright.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -89,19 +110,11 @@ require 'lspconfig'.pyright.setup {
     },
 }
 
--- require("lspconfig")["pyright"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = lsp_flags,
---     single_file_support = true,
---     settings = {
---         python = {
---             analysis = {
---                 typeCheckingMode = "off",
---             },
---         },
---     }
--- })
+require("lspconfig")["kotlin_language_server"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 require("lspconfig")["bashls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
