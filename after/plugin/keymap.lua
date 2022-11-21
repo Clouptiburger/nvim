@@ -7,12 +7,10 @@ vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
 -- Move current line / block with Alt-j/k ala vscode.
 vim.keymap.set('i', "<A-k>", "<Esc>:m .-2<CR>==gi")
-
 -- Move current line / block with Alt-j/k ala vscode.
 vim.keymap.set('n', "<A-j>", ":m .+1<CR>==")
 -- Move current line / block with Alt-j/k ala vscode.
 vim.keymap.set('n', "<A-k>", ":m .-2<CR>==")
-
 -- Move current line / block with Alt-j/k ala vscode.
 vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv-gv")
 -- Move current line / block with Alt-j/k ala vscode.
@@ -50,11 +48,8 @@ vim.keymap.set('n', 'x', '"_x') -- no yank with x
 vim.keymap.set('n', "<leader>y", "\"+y")
 vim.keymap.set('v', "<leader>y", "\"+y")
 vim.keymap.set('n', "<leader>Y", "\"+Y")
-
-
 vim.keymap.set('n', "<leader>d", "\"_d")
 vim.keymap.set('v', "<leader>d", "\"_d")
-
 vim.keymap.set('v', "<leader>d", "\"_d")
 
 -- Telescope
@@ -131,3 +126,7 @@ vim.keymap.set('n', '<leader>sf', require('spectre').open_file_search)
 -- tabline
 vim.keymap.set('n', 'gt', ":TablineBufferNext<CR>")
 vim.keymap.set('n', 'gT', ":TablineBufferPrevious<CR>")
+
+-- Close buffers 
+vim.keymap.set('n', '<leader>q', ':bd<CR>')
+vim.keymap.set('n', '<leader><leader>q', ':%bd|e#<CR>')

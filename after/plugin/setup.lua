@@ -34,6 +34,12 @@ require("fidget").setup {
 
 require('Comment').setup()
 
+-- -- Comment
+-- vim.keymap.set('n', '<C-:>', 'gcc', { noremap = false })
+-- vim.keymap.set('v', '<C-:>', 'gc', { noremap = false })
+-- vim.keymap.set('n', '<C-S-:>', 'gbc', { noremap = false })
+-- vim.keymap.set('v', '<C-S-:>', 'gb', { noremap = false })
+
 -- NVIM TREE
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
@@ -67,4 +73,5 @@ require("indent_blankline").setup {
 }
 
 require("toggleterm").setup {
-open_mapping = [[<C-M-T>]]}
+    open_mapping = [[<C-M-T>]]
+}
