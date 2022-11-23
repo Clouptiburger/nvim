@@ -19,11 +19,10 @@ return require('packer').startup(function(use)
 
     -- Telescope
     -- use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
-    use { 'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-    -- use "ThePrimeagen/harpoon"
+    --use "ThePrimeagen/harpoon"
 
     -- Colors
     use 'navarasu/onedark.nvim'

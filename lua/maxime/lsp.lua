@@ -111,6 +111,18 @@ require 'lspconfig'.pyright.setup {
     },
 }
 
+require 'lspconfig'.powershell_es.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { 'pwsh', '-NoLogo', '-NoProfile', '-Command',
+        "C:/Users/y4qogd/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1" },
+
+    root_dir = function(fname)
+        return util.find_git_ancestor(fname) or find_svn_ancestor(fname)
+            or util.path.dirname(fname)
+    end,
+}
+
 require("lspconfig")["kotlin_language_server"].setup({
     capabilities = capabilities,
     on_attach = on_attach,

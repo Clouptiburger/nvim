@@ -1,4 +1,4 @@
-require 'nvim-treesitter.install'.compilers = { "clang" }
+-- require 'nvim-treesitter.install'.compilers = { "clang" }
 
 local swap_next, swap_prev = (function()
     local swap_objects = {
