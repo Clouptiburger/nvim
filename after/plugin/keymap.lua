@@ -127,6 +127,10 @@ vim.keymap.set('n', '<leader>sf', require('spectre').open_file_search)
 vim.keymap.set('n', 'gt', ":TablineBufferNext<CR>")
 vim.keymap.set('n', 'gT', ":TablineBufferPrevious<CR>")
 
--- Close buffers 
+-- Close buffers
 vim.keymap.set('n', '<leader>q', ':bd<CR>')
 vim.keymap.set('n', '<leader><leader>q', ':%bd|e#<CR>')
+
+-- neogen
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", [[<Leader>""]], ":lua require('neogen').generate()<CR>", opts)

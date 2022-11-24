@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    -- NOT USING THIS FOR THE MOMENT
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -44,7 +43,15 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter-context'
     use "nvim-treesitter/playground"
-    use "danymat/neogen"
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter",
+        -- Uncomment next line if you want to follow only stable versions
+        -- tag = "*"
+    }
     use "nvim-treesitter/nvim-treesitter-textobjects"
 
 
@@ -94,6 +101,7 @@ return require('packer').startup(function(use)
             }
         end,
     }
+
     -- LSP
     use {
         "williamboman/mason.nvim",
@@ -123,6 +131,20 @@ return require('packer').startup(function(use)
             require('lsp_signature').setup()
         end
     }
+    use "jose-elias-alvarez/typescript.nvim"
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+
+            saga.init_lsp_saga({
+                symbol_in_winbar = {
+                    in_custom = true
+                }
+            })
+        end,
+    })
     -- seems nice but heavy
     -- use({
     --     "glepnir/lspsaga.nvim",
@@ -173,10 +195,6 @@ return require('packer').startup(function(use)
 
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
-    use {
-        "AndrewRadev/splitjoin.vim",
-        keys = { "gJ", "gS" },
-    }
 
     -- Pretty colors
     -- use "norcalli/nvim-colorizer.lua"
@@ -228,22 +246,17 @@ return require('packer').startup(function(use)
     --     end,
     -- }
 
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        config = function()
-            local saga = require("lspsaga")
-
-            saga.init_lsp_saga({
-                symbol_in_winbar = {
-                    in_custom = true
-                }
-            })
-        end,
-    })
     use {
         'kdheepak/tabline.nvim',
         requires = { 'hoob3rt/lualine.nvim', 'kyazdani42/nvim-web-devicons' }
     }
-
+    -- better joins
+    use({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter' },
+        config = function()
+            require('treesj').setup({ use_default_keymaps = false,
+            })
+        end,
+    })
 end)
