@@ -41,6 +41,7 @@ if __name__ == "__main__":
     instance = MyPythonClass("identifier")
     if a > 3:
         print(a)
+
     for i in range(5):
         print("coucou")
 
