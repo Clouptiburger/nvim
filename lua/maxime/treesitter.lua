@@ -31,6 +31,10 @@ require("nvim-treesitter.configs").setup {
         use_languagetree = false,
     },
 
+    autotag = {
+        enable = true,
+    },
+
     refactor = {
         highlight_definitions = { enable = true },
         highlight_current_scope = { enable = false },

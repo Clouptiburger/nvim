@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
         --     require('Comment').setup()
         -- end
     }
+    use "windwp/nvim-ts-autotag"
     use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
@@ -165,6 +166,7 @@ return require('packer').startup(function(use)
 
 
     use 'L3MON4D3/LuaSnip'
+    use "rafamadriz/friendly-snippets"
     --     use {
     --         "windwp/nvim-autopairs",
     --         config = function() require("nvim-autopairs").setup {} end
