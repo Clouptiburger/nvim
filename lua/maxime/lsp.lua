@@ -123,6 +123,8 @@ require 'lspconfig'.powershell_es.setup {
     end,
 }
 
+require 'lspconfig'.eslint.setup {}
+
 require("lspconfig")["kotlin_language_server"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
