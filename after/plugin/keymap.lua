@@ -124,8 +124,8 @@ vim.keymap.set('v', '<leader>s', require('spectre').open_visual)
 vim.keymap.set('n', '<leader>sf', require('spectre').open_file_search)
 
 -- tabline
-vim.keymap.set('n', 'gt', ":TablineBufferNext<CR>")
-vim.keymap.set('n', 'gT', ":TablineBufferPrevious<CR>")
+vim.keymap.set('n', '<leader><TAB>', ":TablineBufferNext<CR>")
+vim.keymap.set('n', '<leader><S-TAB>', ":TablineBufferPrevious<CR>")
 
 -- Close buffers
 vim.keymap.set('n', '<leader>q', ':bd<CR>')
