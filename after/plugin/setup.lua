@@ -18,6 +18,7 @@ require('telescope').setup {
 -- load_extension, somewhere after setup function:
 -- pcall(require('telescope').load_extension, 'fzf')
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('neoclip')
 
 
 require("fidget").setup {
@@ -77,3 +78,8 @@ require("toggleterm").setup {
 }
 
 
+-- colors
+require 'terminal'.setup()
+require 'colorizer'.setup(
+    { '*'; }
+)

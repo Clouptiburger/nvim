@@ -1,4 +1,4 @@
---p_implementations This file can be loaded by calling `lua require('plugins')` from your init.vimpacker
+--p_implementations This file can be loaded by calling `lua require('plugins')` from your init.vimpackerpacker.lua
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -71,7 +71,11 @@ return require('packer').startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'
     use 'psliwka/vim-smoothie'
+
+    -- UNDO tree plugins
     use "mbbill/undotree"
+    -- use "sjl/gundo.vim"
+
     use 'windwp/nvim-spectre'
     use "tpope/vim-sleuth"
     -- Packer
@@ -103,6 +107,17 @@ return require('packer').startup(function(use)
         end,
     }
 
+    use {
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            -- you'll need at least one of these
+            { 'nvim-telescope/telescope.nvim' },
+            -- {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+            require('neoclip').setup()
+        end,
+    }
     -- LSP
     use {
         "williamboman/mason.nvim",
@@ -147,6 +162,18 @@ return require('packer').startup(function(use)
             })
         end,
     })
+
+    use {
+        "folke/lsp-trouble.nvim",
+        cmd = "Trouble",
+        config = function()
+            -- Can use P to toggle auto movement
+            require("trouble").setup {
+                auto_preview = false,
+                auto_fold = true,
+            }
+        end,
+    }
     -- seems nice but heavy
     -- use({
     --     "glepnir/lspsaga.nvim",
@@ -200,13 +227,13 @@ return require('packer').startup(function(use)
     use "tpope/vim-repeat"
 
     -- Pretty colors
-    -- use "norcalli/nvim-colorizer.lua"
-    -- use {
-    --     "norcalli/nvim-terminal.lua",
-    --     config = function()
-    --         require("terminal").setup()
-    --     end,
-    -- }
+    use "norcalli/nvim-colorizer.lua"
+    use {
+        "norcalli/nvim-terminal.lua",
+        config = function()
+            require("terminal").setup()
+        end,
+    }
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }

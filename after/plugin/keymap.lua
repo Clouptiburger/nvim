@@ -23,7 +23,7 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
 vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 vim.keymap.set('n', '<leader>--', function() vim.cmd 'set foldmethod=indent' end)
-vim.keymap.set('n', '<leader>u', ":UndotreeToggle<CR>")
+vim.keymap.set('n', '<leader>ut', ":UndotreeToggle<CR>")
 -- Quick fix list short cut
 vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
@@ -69,6 +69,7 @@ vim.keymap.set('n', "<leader>/",
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
 vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter)
 vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin)
+vim.keymap.set('n', '<leader>fc', ":Telescope neoclip<CR>")
 
 vim.keymap.set('n', "gR", require('telescope.builtin').lsp_references)
 vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations)
