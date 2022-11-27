@@ -64,6 +64,7 @@ vim.keymap.set('n', "<leader>fI", function() require('maxime.custom').live_grep_
 vim.keymap.set('n', "<leader>fi", require('maxime.custom').live_grep_shortcuts)
 vim.keymap.set('n', "<leader>fk", require('telescope.builtin').keymaps)
 vim.keymap.set('n', "<leader>fd", require('telescope.builtin').diagnostics)
+vim.keymap.set('n', "<leader>f*", require('telescope.builtin').grep_string)
 vim.keymap.set('n', "<leader>/",
     function() require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy()) end)
 vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser)
