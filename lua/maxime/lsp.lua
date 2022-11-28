@@ -80,151 +80,228 @@ end
 --         },
 --     }
 -- })
-
-require 'lspconfig'.pyright.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- cmd = { "pyright-langserver", "--stdio" },
-    filetypes = { "python" },
-    root_dir = function(fname)
-        local root_files = {
-            'pyproject.toml',
-            -- 'setup.py',
-            'setup.cfg',
-            'requirements.txt',
-            'Pipfile',
-            'pyrightconfig.json',
-        }
-        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or find_svn_ancestor(fname)
-            or util.path.dirname(fname)
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function(server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup { capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags, }
     end,
-    settings = {
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                useLibraryCodeForTypes = false,
-                typeCheckingMode = "off",
+    -- Next, you can provide a dedicated handler for specific servers.
+    -- For example, a handler override for the `rust_analyzer`:
+    -- ["rust_analyzer"] = function()
+    --     require("rust-tools").setup {}
+    -- end
+    ["sumneko_lua"] = function()
+        require("lspconfig")["sumneko_lua"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags,
+            settings = {
+                Lua = {
+                    runtime = {
+                        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                        version = "LuaJIT",
+                        -- Setup your lua path
+                    },
+                    completion = { callSnippet = "Both" },
+                    diagnostics = {
+                        -- Get the language server to recognize the `vim` global
+                        globals = { "vim" },
+                    },
+                    workspace = {
+                        -- Make the server aware of Neovim runtime files
+                        maxPreload = 2000,
+                        preloadFileSize = 50000,
+                    },
+                    -- Do not send telemetry data containing a randomized but unique identifier
+                    telemetry = { enable = false },
+                },
             },
-        },
-    },
+        })
+    end,
+    ["pyright"] = function()
+        require 'lspconfig'.pyright.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags,
+            -- cmd = { "pyright-langserver", "--stdio" },
+            filetypes = { "python" },
+            root_dir = function(fname)
+                local root_files = {
+                    'pyproject.toml',
+                    -- 'setup.py',
+                    'setup.cfg',
+                    'requirements.txt',
+                    'Pipfile',
+                    'pyrightconfig.json',
+                }
+                return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or
+                    find_svn_ancestor(fname)
+                    or util.path.dirname(fname)
+            end,
+            settings = {
+                python = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        diagnosticMode = "workspace",
+                        useLibraryCodeForTypes = false,
+                        typeCheckingMode = "off",
+                    },
+                },
+            },
+        }
+    end,
+    ["eslint"] = function()
+        require 'lspconfig'.eslint.setup {}
+    end
 }
-
--- require 'lspconfig'.powershell_es.setup {
+-- require 'lspconfig'.pyright.setup {
 --     capabilities = capabilities,
 --     on_attach = on_attach,
---     cmd = { 'pwsh', '-NoLogo', '-NoProfile', '-Command',
---         "C:/Users/y4qogd/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1" },
---
+--     flags = lsp_flags,
+--     -- cmd = { "pyright-langserver", "--stdio" },
+--     filetypes = { "python" },
 --     root_dir = function(fname)
---         return util.find_git_ancestor(fname) or find_svn_ancestor(fname)
+--         local root_files = {
+--             'pyproject.toml',
+--             -- 'setup.py',
+--             'setup.cfg',
+--             'requirements.txt',
+--             'Pipfile',
+--             'pyrightconfig.json',
+--         }
+--         return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or find_svn_ancestor(fname)
 --             or util.path.dirname(fname)
 --     end,
+--     settings = {
+--         python = {
+--             analysis = {
+--                 autoSearchPaths = true,
+--                 diagnosticMode = "workspace",
+--                 useLibraryCodeForTypes = false,
+--                 typeCheckingMode = "off",
+--             },
+--         },
+--     },
 -- }
-
-require 'lspconfig'.eslint.setup {}
-
-require("lspconfig")["kotlin_language_server"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-
-require("lspconfig")["bashls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-
-require("lspconfig")["gopls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-
-require("lspconfig")["clangd"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-
-require("lspconfig")["cssls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-require("lspconfig")["html"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-
--- TYPESCRIPT SETUP
--- require("lspconfig")["tsserver"].setup({
+--
+-- -- require 'lspconfig'.powershell_es.setup {
+-- --     capabilities = capabilities,
+-- --     on_attach = on_attach,
+-- --     cmd = { 'pwsh', '-NoLogo', '-NoProfile', '-Command',
+-- --         "C:/Users/y4qogd/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1" },
+-- --
+-- --     root_dir = function(fname)
+-- --         return util.find_git_ancestor(fname) or find_svn_ancestor(fname)
+-- --             or util.path.dirname(fname)
+-- --     end,
+-- -- }
+--
+-- require 'lspconfig'.eslint.setup {}
+--
+-- require("lspconfig")["kotlin_language_server"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- })
+--
+-- require("lspconfig")["bashls"].setup({
 --     capabilities = capabilities,
 --     on_attach = on_attach,
 --     flags = lsp_flags,
 -- })
-require("typescript").setup({
-    disable_commands = false, -- prevent the plugin from creating Vim commands
-    debug = false, -- enable debug logging for commands
-    go_to_source_definition = {
-        fallback = true, -- fall back to standard LSP definition on failure
-    },
-    server = { -- pass options to lspconfig's setup method
-        capabilities = capabilities,
-        on_attach = on_attach,
-        flags = lsp_flags,
-    },
-})
-require("lspconfig")["lemminx"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-})
-
-require("lspconfig")["marksman"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-    cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
-})
-
-require("lspconfig")["rust_analyzer"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
-    settings = {
-        ["rust-analyzer"] = {},
-    },
-})
-require("lspconfig")["sumneko_lua"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = "LuaJIT",
-                -- Setup your lua path
-            },
-            completion = { callSnippet = "Both" },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { "vim" },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                maxPreload = 2000,
-                preloadFileSize = 50000,
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = { enable = false },
-        },
-    },
-})
+--
+-- require("lspconfig")["gopls"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- })
+--
+-- require("lspconfig")["clangd"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- })
+--
+-- require("lspconfig")["cssls"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- })
+-- require("lspconfig")["html"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- })
+--
+-- -- TYPESCRIPT SETUP
+-- -- require("lspconfig")["tsserver"].setup({
+-- --     capabilities = capabilities,
+-- --     on_attach = on_attach,
+-- --     flags = lsp_flags,
+-- -- })
+-- require("typescript").setup({
+--     disable_commands = false, -- prevent the plugin from creating Vim commands
+--     debug = false, -- enable debug logging for commands
+--     go_to_source_definition = {
+--         fallback = true, -- fall back to standard LSP definition on failure
+--     },
+--     server = { -- pass options to lspconfig's setup method
+--         capabilities = capabilities,
+--         on_attach = on_attach,
+--         flags = lsp_flags,
+--     },
+-- })
+-- require("lspconfig")["lemminx"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- })
+--
+-- require("lspconfig")["marksman"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
+-- })
+--
+-- require("lspconfig")["rust_analyzer"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     -- Server-specific settings...
+--     settings = {
+--         ["rust-analyzer"] = {},
+--     },
+-- })
+-- require("lspconfig")["sumneko_lua"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     settings = {
+--         Lua = {
+--             runtime = {
+--                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--                 version = "LuaJIT",
+--                 -- Setup your lua path
+--             },
+--             completion = { callSnippet = "Both" },
+--             diagnostics = {
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { "vim" },
+--             },
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 maxPreload = 2000,
+--                 preloadFileSize = 50000,
+--             },
+--             -- Do not send telemetry data containing a randomized but unique identifier
+--             telemetry = { enable = false },
+--         },
+--     },
+-- })
 
 require("null-ls").setup({
     sources = {
