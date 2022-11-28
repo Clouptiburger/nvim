@@ -60,13 +60,13 @@ return require('packer').startup(function(use)
     -- 	use 'vim-airline/vim-airline-themes'
 
 
-    -- Other tools
-    use {
-        'numToStr/Comment.nvim'
-        -- config = function()
-        --     require('Comment').setup()
-        -- end
-    }
+     -- Other tools
+     use {
+         'numToStr/Comment.nvim'
+         -- config = function()
+         --     require('Comment').setup()
+         -- end
+     }
     use "windwp/nvim-ts-autotag"
     use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'

@@ -75,6 +75,7 @@ require("nvim-treesitter.configs").setup {
 
         config = {
             c = "// %s",
+            json = "// %s",
             lua = "-- %s",
         },
     },
