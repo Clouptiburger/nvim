@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup(
-    { ensure_installed = { "sumneko_lua", "rust_analyzer", "pyright", "marksman", "lemminx", "html", "tsserver", "cssls",
+    { ensure_installed = { "sumneko_lua", "pyright", "marksman", "lemminx", "html", "tsserver", "cssls",
         "clangd" } }
 )
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -156,7 +156,15 @@ require("mason-lspconfig").setup_handlers {
     end,
     ["eslint"] = function()
         require 'lspconfig'.eslint.setup {}
-    end
+    end,
+    ["marksman"] = function()
+        require("lspconfig")["marksman"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags,
+            cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
+        })
+    end,
 }
 -- require 'lspconfig'.pyright.setup {
 --     capabilities = capabilities,
