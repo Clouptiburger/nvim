@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim' }
     use { "nvim-telescope/telescope-file-browser.nvim" }
+    use { "LinArcX/telescope-command-palette.nvim" }
     --use "ThePrimeagen/harpoon"
 
     -- Colors
@@ -60,13 +61,13 @@ return require('packer').startup(function(use)
     -- 	use 'vim-airline/vim-airline-themes'
 
 
-     -- Other tools
-     use {
-         'numToStr/Comment.nvim'
-         -- config = function()
-         --     require('Comment').setup()
-         -- end
-     }
+    -- Other tools
+    use {
+        'numToStr/Comment.nvim'
+        -- config = function()
+        --     require('Comment').setup()
+        -- end
+    }
     use "windwp/nvim-ts-autotag"
     use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'
