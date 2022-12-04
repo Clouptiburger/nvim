@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
     use "windwp/nvim-ts-autotag"
     use "lukas-reineke/indent-blankline.nvim"
     -- use 'mg979/vim-visual-multi'
-    use 'psliwka/vim-smoothie'
+    -- use 'psliwka/vim-smoothie'
 
     -- UNDO tree plugins
     use "mbbill/undotree"
@@ -290,4 +290,6 @@ return require('packer').startup(function(use)
             })
         end,
     })
+    -- useless stuff
+    use "ThePrimeagen/vim-be-good"
 end)
