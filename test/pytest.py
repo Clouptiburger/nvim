@@ -4,6 +4,7 @@ import numpy
 
 numpy.amax
 
+
 def function(test: str):
     return test
 
@@ -33,7 +34,8 @@ class MyPythonClass(object):
         printer(message)
 
 
-test = function(1)
+test = function("1")
+
 if __name__ == "__main__":
     a = 2 + 1
     myStr = function("coucou")
@@ -44,4 +46,3 @@ if __name__ == "__main__":
     for i in range(5):
         print("coucou")
 
-    printer("a message")
