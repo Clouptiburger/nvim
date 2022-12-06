@@ -76,6 +76,16 @@ lsp.on_attach(on_attach)
 lsp.configure("marksman", {
     cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
 })
+
+lsp.configure("pyright", {
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "off",
+            },
+        },
+    }
+})
 lsp.setup()
 
 
