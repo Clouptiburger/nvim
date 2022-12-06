@@ -153,7 +153,7 @@ return require('packer').startup(function(use)
     -- use 'hrsh7th/cmp-nvim-lsp'
     -- use 'L3MON4D3/LuaSnip'
     -- use "rafamadriz/friendly-snippets"
-
+    use 'simrat39/rust-tools.nvim'
 
 
     --use 'hrsh7th/cmp-cmdline'
