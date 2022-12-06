@@ -71,7 +71,7 @@ local default_options = {
     updatetime = 100, -- faster completion
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     expandtab = true, -- convert tabs to spaces
-    -- cursorline = true, -- highlight the current line
+    cursorline = true, -- highlight the current line
     signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
     wrap = false, -- display lines as one long line
 }
