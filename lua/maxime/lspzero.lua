@@ -66,6 +66,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>gr", ":Lspsaga lsp_finder<CR>", bufopts)
     vim.keymap.set("n", "gr", ":Lspsaga lsp_finder<CR>", bufopts)
     vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, bufopts)
+    vim.keymap.set("n", "<M-C-L>", vim.lsp.buf.format, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
 end
