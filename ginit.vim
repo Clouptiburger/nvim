@@ -2,10 +2,10 @@
 set mouse=a
 
 " Set Editor Font
-if exists(':GuiFont')
-    " Use GuiFont! to ignore font errors
-    GuiFont! JetBrainsMonoNL Nerd Font Mono:h10:1
-endif 
+" if exists(':GuiFont')
+"     " Use GuiFont! to ignore font errors
+"     GuiFont! JetBrainsMonoNL Nerd Font Mono:h10:1
+" endif 
   
 " Disable GUI Tabline
 if exists(':GuiTabline')
