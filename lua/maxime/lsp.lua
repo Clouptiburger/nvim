@@ -15,7 +15,7 @@ local util = require 'lspconfig/util'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
     -- Mappings.
@@ -84,7 +84,8 @@ end
 -- DAP for rust
 local extension_path = vim.env.HOME .. '\\.vscode\\extensions\\vadimcn.vscode-lldb-1.8.1\\'
 local codelldb_path = extension_path .. 'adapter\\codelldb.exe'
-local liblldb_path = extension_path .. 'lldb\\lib\\liblldb.lib'
+local liblldb_path = extension_path .. 'lldb\\bin\\liblldb.dll'
+local rt = require("rust-tools")
 
 require("mason-lspconfig").setup_handlers {
     -- The first entry (without a key) will be the default handler
@@ -105,7 +106,12 @@ require("mason-lspconfig").setup_handlers {
             },
             server = {
                 capabilities = capabilities,
-                on_attach = on_attach,
+                on_attach = function(_, bufnr)
+                    on_attach(_, bufnr)
+                    vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+                    -- Code action groups
+                    vim.keymap.set("n", "<Leader>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+                end,
                 flags = lsp_flags,
             }
         }

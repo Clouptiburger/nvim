@@ -26,33 +26,33 @@ dap_python.setup("python", {
     include_configs = true,
 })
 
-dap.adapters.codelldb = {
-    type = 'server',
-    port = "${port}",
-    executable = {
-        -- CHANGE THIS to your path!
-        command = vim.env.HOME .. "\\.vscode\\extensions\\vadimcn.vscode-lldb-1.8.1\\adapter\\codelldb.exe",
-        args = { "--port", "${port}" },
+-- dap.adapters.codelldb = {
+--     type = 'server',
+--     port = "${port}",
+--     executable = {
+--         -- CHANGE THIS to your path!
+--         command = vim.env.HOME .. "\\.vscode\\extensions\\vadimcn.vscode-lldb-1.8.1\\adapter\\codelldb.exe",
+--         args = { "--port", "${port}" },
+--
+--         -- On windows you may have to uncomment this:
+--         -- detached = false,
+--     }
+-- }
+-- dap.configurations.cpp = {
+--     {
+--         name = "Launch file",
+--         type = "codelldb",
+--         request = "launch",
+--         program = function()
+--             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+--         end,
+--         cwd = '${workspaceFolder}',
+--         stopOnEntry = false,
+--     },
+-- }
 
-        -- On windows you may have to uncomment this:
-        -- detached = false,
-    }
-}
-dap.configurations.cpp = {
-    {
-        name = "Launch file",
-        type = "codelldb",
-        request = "launch",
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-    },
-}
-
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+-- dap.configurations.c = dap.configurations.cpp
+-- dap.configurations.rust = dap.configurations.cpp
 
 require('dapui').setup()
 dap.listeners.after.event_initialized["dapui_config"] = function()
