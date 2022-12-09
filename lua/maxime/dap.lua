@@ -14,6 +14,7 @@ vim.keymap.set('n', "<leader>dE", function()
 end)
 require('nvim-dap-virtual-text').setup()
 
+local dap, dapui = require('dap'), require('dapui')
 local dap_python = require "dap-python"
 require('dap-go').setup()
 
@@ -25,9 +26,35 @@ dap_python.setup("python", {
     include_configs = true,
 })
 
-require('dapui').setup()
+dap.adapters.codelldb = {
+    type = 'server',
+    port = "${port}",
+    executable = {
+        -- CHANGE THIS to your path!
+        command = vim.env.HOME .. "\\.vscode\\extensions\\vadimcn.vscode-lldb-1.8.1\\adapter\\codelldb.exe",
+        args = { "--port", "${port}" },
 
-local dap, dapui = require('dap'), require('dapui')
+        -- On windows you may have to uncomment this:
+        -- detached = false,
+    }
+}
+dap.configurations.cpp = {
+    {
+        name = "Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+    },
+}
+
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
+
+require('dapui').setup()
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
 end

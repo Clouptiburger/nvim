@@ -80,6 +80,12 @@ end
 --         },
 --     }
 -- })
+
+-- DAP for rust
+local extension_path = vim.env.HOME .. '\\.vscode\\extensions\\vadimcn.vscode-lldb-1.8.1\\'
+local codelldb_path = extension_path .. 'adapter\\codelldb.exe'
+local liblldb_path = extension_path .. 'lldb\\lib\\liblldb.lib'
+
 require("mason-lspconfig").setup_handlers {
     -- The first entry (without a key) will be the default handler
     -- and will be called for each installed server that doesn't have
@@ -91,9 +97,19 @@ require("mason-lspconfig").setup_handlers {
     end,
     -- Next, you can provide a dedicated handler for specific servers.
     -- For example, a handler override for the `rust_analyzer`:
-    -- ["rust_analyzer"] = function()
-    --     require("rust-tools").setup {}
-    -- end
+    ["rust_analyzer"] = function()
+        require("rust-tools").setup {
+            dap = {
+                adapter = require('rust-tools.dap').get_codelldb_adapter(
+                    codelldb_path, liblldb_path)
+            },
+            server = {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                flags = lsp_flags,
+            }
+        }
+    end,
     ["sumneko_lua"] = function()
         require("lspconfig")["sumneko_lua"].setup({
             capabilities = capabilities,
