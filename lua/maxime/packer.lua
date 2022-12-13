@@ -25,12 +25,12 @@ return require('packer').startup(function(use)
     --use "ThePrimeagen/harpoon"
 
     -- Colors
-    use 'navarasu/onedark.nvim'
+    -- use 'navarasu/onedark.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    use { "ellisonleao/gruvbox.nvim" }
+    -- use { "ellisonleao/gruvbox.nvim" }
     -- use 'tjdevries/colorbuddy.vim'
     -- use 'tjdevries/gruvbuddy.nvim'
     use 'folke/tokyonight.nvim'
@@ -43,16 +43,16 @@ return require('packer').startup(function(use)
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
     use 'nvim-treesitter/nvim-treesitter-context'
-    use "nvim-treesitter/playground"
-    use {
-        "danymat/neogen",
-        config = function()
-            require('neogen').setup {}
-        end,
-        requires = "nvim-treesitter/nvim-treesitter",
-        -- Uncomment next line if you want to follow only stable versions
-        -- tag = "*"
-    }
+    -- use "nvim-treesitter/playground"
+    -- use {
+    --     "danymat/neogen",
+    --     config = function()
+    --         require('neogen').setup {}
+    --     end,
+    --     requires = "nvim-treesitter/nvim-treesitter",
+    --     -- Uncomment next line if you want to follow only stable versions
+    --     -- tag = "*"
+    -- }
     use "nvim-treesitter/nvim-treesitter-textobjects"
 
 
@@ -95,18 +95,18 @@ return require('packer').startup(function(use)
     --         "rcarriga/nvim-notify",
     --     }
     -- })
-    use {
-        "smjonas/live-command.nvim",
-        -- live-command supports semantic versioning via tags
-        -- tag = "1.*",
-        config = function()
-            require("live-command").setup {
-                commands = {
-                    Norm = { cmd = "norm" },
-                },
-            }
-        end,
-    }
+    -- use {
+    --     "smjonas/live-command.nvim",
+    --     -- live-command supports semantic versioning via tags
+    --     -- tag = "1.*",
+    --     config = function()
+    --         require("live-command").setup {
+    --             commands = {
+    --                 Norm = { cmd = "norm" },
+    --             },
+    --         }
+    --     end,
+    -- }
 
     use {
         "AckslD/nvim-neoclip.lua",
@@ -120,39 +120,39 @@ return require('packer').startup(function(use)
         end,
     }
     -- LSP
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        }
-    }
     -- use {
-    --     "williamboman/mason.nvim",
-    --     "williamboman/mason-lspconfig.nvim",
-    --     "neovim/nvim-lspconfig",
+    --     'VonHeikemen/lsp-zero.nvim',
+    --     requires = {
+    --         -- LSP Support
+    --         { 'neovim/nvim-lspconfig' },
+    --         { 'williamboman/mason.nvim' },
+    --         { 'williamboman/mason-lspconfig.nvim' },
+    --
+    --         -- Autocompletion
+    --         { 'hrsh7th/nvim-cmp' },
+    --         { 'hrsh7th/cmp-buffer' },
+    --         { 'hrsh7th/cmp-path' },
+    --         { 'saadparwaiz1/cmp_luasnip' },
+    --         { 'hrsh7th/cmp-nvim-lsp' },
+    --         { 'hrsh7th/cmp-nvim-lua' },
+    --
+    --         -- Snippets
+    --         { 'L3MON4D3/LuaSnip' },
+    --         { 'rafamadriz/friendly-snippets' },
+    --     }
     -- }
-    -- use 'hrsh7th/nvim-cmp'
-    -- use 'hrsh7th/cmp-buffer'
-    -- use 'hrsh7th/cmp-path'
-    -- use { 'saadparwaiz1/cmp_luasnip' }
-    -- use 'hrsh7th/cmp-nvim-lsp'
-    -- use 'L3MON4D3/LuaSnip'
-    -- use "rafamadriz/friendly-snippets"
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+    use "rafamadriz/friendly-snippets"
     use 'simrat39/rust-tools.nvim'
 
 
@@ -160,14 +160,14 @@ return require('packer').startup(function(use)
     --use 'kabouzeid/nvim-lspinstall'
     use 'jose-elias-alvarez/null-ls.nvim'
     use "j-hui/fidget.nvim"
-    use "onsails/lspkind.nvim"
+    -- use "onsails/lspkind.nvim"
     use {
         'stevearc/aerial.nvim',
         config = function()
             require('aerial').setup()
         end
     }
-    use 'folke/lsp-colors.nvim'
+    -- use 'folke/lsp-colors.nvim'
     use {
         "ray-x/lsp_signature.nvim",
         config = function()
@@ -266,9 +266,9 @@ return require('packer').startup(function(use)
 
 
     -- GIT:
-    use "TimUntersberger/neogit"
+    -- use "TimUntersberger/neogit"
     use "tpope/vim-fugitive"
-    use "tpope/vim-rhubarb"
+    -- use "tpope/vim-rhubarb"
     -- -- Github integration
     -- if vim.fn.executable "gh" == 1 then
     --     use "pwntester/octo.nvim"
@@ -301,19 +301,18 @@ return require('packer').startup(function(use)
     --     end,
     -- }
 
-    use {
-        'kdheepak/tabline.nvim',
-        requires = { 'hoob3rt/lualine.nvim', 'kyazdani42/nvim-web-devicons' }
-    }
+    use { 'kdheepak/tabline.nvim', requires = { 'hoob3rt/lualine.nvim', 'kyazdani42/nvim-web-devicons' } }
     -- better joins
-    use({
-        'Wansmer/treesj',
-        requires = { 'nvim-treesitter' },
-        config = function()
-            require('treesj').setup({ use_default_keymaps = false,
-            })
-        end,
-    })
+    -- use({
+    --     'Wansmer/treesj',
+    --     requires = {
+    --         'nvim-treesitter',
+    --     },
+    --     config = function()
+    --         require('treesj').setup({ use_default_keymaps = false,
+    --         })
+    --     end,
+    -- })
     -- useless stuff
-    use "ThePrimeagen/vim-be-good"
+    -- use "ThePrimeagen/vim-be-good"
 end)
