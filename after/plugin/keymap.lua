@@ -89,7 +89,7 @@ vim.keymap.set('n', '<leader>ds', ":AerialToggle<CR>")
 -- vim.keymap.set('n', "<leader>fgc", require('telescope.builtin').git_commits)
 
 -- NvimTree
-vim.keymap.set('n', '<leader>E', ":NvimTreeToggle<CR>")
+vim.keymap.set('n', '<leader>E', ":Lexplore<CR>")
 
 -- Markdown
 vim.keymap.set('n', '<leader>md', ":MarkdownPreviewToggle<CR>")

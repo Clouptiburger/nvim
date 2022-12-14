@@ -37,6 +37,7 @@ vim.opt.shortmess:append("c")
 vim.g.mapleader = " "
 -- vim.cmd "set foldmethod=indent"
 
+vim.g.netrw_winsize = 30
 
 -- set permanent undo
 if vim.fn.has('linux') == 1 then
