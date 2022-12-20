@@ -24,17 +24,21 @@ return require('packer').startup(function(use)
     use { "LinArcX/telescope-command-palette.nvim" }
     --use "ThePrimeagen/harpoon"
 
-    -- Colors
-    -- use 'navarasu/onedark.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    -- use { "ellisonleao/gruvbox.nvim" }
-    -- use 'tjdevries/colorbuddy.vim'
-    -- use 'tjdevries/gruvbuddy.nvim'
+
+    -- Colors
+    use 'navarasu/onedark.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
+    use 'tjdevries/colorbuddy.vim'
+    use 'tjdevries/gruvbuddy.nvim'
     use 'folke/tokyonight.nvim'
+    use 'projekt0n/github-nvim-theme'
+    use 'rose-pine/neovim'
     -- use { "catppuccin/nvim", as = "catppuccin" }
+    --
     -- use 'doums/darcula'
 
     -- Treesitter
