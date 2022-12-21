@@ -3,7 +3,6 @@ import numpy
 # test comment
 numpy.amax
 
-
 def function(test: str):
     return test
 
