@@ -77,7 +77,7 @@ function M.config()
     M.jump()
     M.surround()
     M.ai()
-    M.pairs()
+    -- M.pairs()
     M.comment()
 end
 
