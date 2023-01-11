@@ -10,7 +10,8 @@ local M = {
         },
         { "jbyuki/one-small-step-for-vimkind" },
         { "theHamsta/nvim-dap-virtual-text" },
-        { "mfussenegger/nvim-dap-python" }
+        { "mfussenegger/nvim-dap-python" },
+        { "leoluz/nvim-dap-go" }
     },
 }
 
@@ -80,6 +81,9 @@ function M.config()
 
         include_configs = true,
     })
+
+    require("dap-go").setup()
+
     dap.configurations.lua = {
         {
             type = "nlua",
