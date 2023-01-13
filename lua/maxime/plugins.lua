@@ -16,6 +16,7 @@ return {
     },
     {
         "SmiteshP/nvim-navic",
+        enabled = false,
         config = function()
             vim.g.navic_silence = true
             require("nvim-navic").setup({ separator = " ", highlight = true, depth_limit = 5 })
@@ -52,7 +53,11 @@ return {
         'glepnir/lspsaga.nvim',
         event = 'BufRead',
         config = function()
-            require('lspsaga').setup({})
+            require('lspsaga').setup({
+                ui = {
+                    code_action = "",
+                }
+            })
         end
     },
     { "folke/trouble.nvim",

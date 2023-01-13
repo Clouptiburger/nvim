@@ -56,9 +56,9 @@ function M.config()
     })
 
 
-    local navic = require("nvim-navic")
+    -- local navic = require("nvim-navic")
     local on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
+        -- navic.attach(client, bufnr)
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
         -- Enable completion triggered by <c-x><c-o>
@@ -126,6 +126,7 @@ function M.config()
             python = {
                 analysis = {
                     typeCheckingMode = "off",
+                    diagnosticMode = "workspace",
                 },
             },
         }
@@ -134,7 +135,7 @@ function M.config()
 end
 
 -- function M.init()
---     lsp.configure("marksman", {
+--     lsp.configurt("marksman", {
 --         cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
 --     })
 --     -- Fit Undefined global 'vim'
