@@ -4,6 +4,7 @@ local M = {
     dependencies = {
         {
             "rcarriga/nvim-dap-ui",
+
             config = function()
                 require("dapui").setup()
             end,
@@ -66,9 +67,6 @@ function M.init()
     vim.keymap.set('n', "<leader>dE", function()
         require("dapui").eval(vim.fn.input "[DAP] Expression > ")
     end, { desc = "Dap Expression" })
-end
-
-function M.config()
     local dap = require("dap")
 
     require('nvim-dap-virtual-text').setup()
@@ -92,11 +90,10 @@ function M.config()
         },
     }
 
+    local dapui = require("dapui")
     dap.adapters.nlua = function(callback, config)
         callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
     end
-
-    local dapui = require("dapui")
     dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open({})
     end
@@ -107,6 +104,9 @@ function M.config()
         dapui.close({})
     end
 end
+
+-- function M.config()
+-- end
 
 -- - `DapBreakpoint` for breakpoints (default: `B`)
 -- - `DapBreakpointCondition` for conditional breakpoints (default: `C`)
