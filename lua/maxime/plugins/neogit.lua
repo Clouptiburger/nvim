@@ -1,6 +1,7 @@
 return {
     "TimUntersberger/neogit",
     cmd = "Neogit",
+    lazy = false,
     config = function()
         require("neogit").setup({
             kind = "split",
@@ -14,6 +15,7 @@ return {
         })
     end,
     init = function()
-        vim.keymap.set("n", "<leader>gg", "<cmd>Neogit kind=floating<cr>", { desc = "Neogit" })
+        -- vim.keymap.set("n", "<leader>gg", "<cmd>Neogit kind=floating<cr>", { desc = "Neogit" })
+        vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
     end,
 }
