@@ -38,6 +38,10 @@ function M.comment()
     })
 end
 
+function M.move()
+    require("mini.move").setup()
+end
+
 function M.ai()
     local ai = require("mini.ai")
     require("mini.ai").setup({
@@ -78,6 +82,7 @@ function M.config()
     M.surround()
     M.ai()
     -- M.pairs()
+    M.move()
     M.comment()
 end
 

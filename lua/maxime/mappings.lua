@@ -13,18 +13,18 @@ vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('i', "<A-k>", "<Esc>:m .-2<CR>==gi")
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('n', "<A-j>", ":m .+1<CR>==")
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('n', "<A-k>", ":m .-2<CR>==")
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv-gv")
--- Move current line / block with Alt-j/k ala vscode.
-vim.keymap.set('v', "<A-k>", ":m '<-2<CR>gv-gv")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('i', "<A-k>", "<Esc>:m .-2<CR>==gi")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('n', "<A-j>", ":m .+1<CR>==")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('n', "<A-k>", ":m .-2<CR>==")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv-gv")
+-- -- Move current line / block with Alt-j/k ala vscode.
+-- vim.keymap.set('v', "<A-k>", ":m '<-2<CR>gv-gv")
 
 -- hide search highlight by pressing esc
 vim.keymap.set('n', '<esc>', '<cmd>:noh<CR>')
