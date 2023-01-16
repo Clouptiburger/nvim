@@ -1,10 +1,9 @@
 local M = {
-    lazy = false,
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
 }
 
-function M.config()
+function M.init()
     require("gitsigns").setup({
         signs = {
             add = { hl = "GitSignsAdd", text = "▍", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
