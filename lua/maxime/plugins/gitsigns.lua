@@ -1,4 +1,5 @@
 local M = {
+    lazy = false,
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
 }
