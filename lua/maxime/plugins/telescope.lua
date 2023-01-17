@@ -102,6 +102,7 @@ function M.init()
     vim.keymap.set('n', "<leader>fo", require('telescope.builtin').oldfiles, { desc = "Telescope Find Old Files" })
     vim.keymap.set('n', "<leader>fh", require('telescope.builtin').help_tags, { desc = "Telescope Find Help Tags" })
     vim.keymap.set('n', "<leader>fk", require('telescope.builtin').keymaps, { desc = "Telescope Find Keymaps" })
+    vim.keymap.set('n', "<leader>fc", require('telescope.builtin').commands, { desc = "Telescope Find Commands" })
     vim.keymap.set('n', "<leader>fd", require('telescope.builtin').diagnostics, { desc = "Telescope Find Diagnostics" })
     vim.keymap.set('n', "<leader>f*", require('telescope.builtin').grep_string, { desc = "Telescope Grep String" })
     vim.keymap.set('n', "<leader>/",
@@ -109,8 +110,7 @@ function M.init()
         { desc = "Telescope Current Buffer Search" })
     vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter, { desc = "Telescope Treesitter Search" })
     vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin, { desc = "Telescope Builtins" })
-    vim.keymap.set('n', '<leader>fc', ":Telescope neoclip<CR>", { desc = "Telescope neoclip (clipboard)" })
-
+    --vim.keymap.set('n', '<leader>fc', ":Telescope neoclip<CR>", { desc = "Telescope neoclip (clipboard)" })
     vim.keymap.set('n', "gR", require('telescope.builtin').lsp_references, { desc = "Telescope LSP References" })
     vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations,
         { desc = "Telescope LSP Implementations" })

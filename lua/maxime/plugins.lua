@@ -77,5 +77,40 @@ return {
         config = function()
             require('lsp_signature').setup()
         end
-    }
+    },
+    {
+        "stevearc/aerial.nvim",
+        keys = { { "<leader>cs", "<cmd>AerialToggle!<cr>", desc = "Symbols Outline" } },
+        config = true,
+    },
+
+    {
+        "danymat/neogen",
+        keys = {
+            {
+                "<leader>cc",
+                function()
+                    require("neogen").generate({})
+                end,
+                desc = "Neogen Comment",
+            },
+        },
+        opts = { snippet_engine = "luasnip" },
+    },
+    {
+        "ThePrimeagen/refactoring.nvim",
+        keys = {
+            {
+                "leader>rr",
+                function()
+                    require("refactoring").select_refactor()
+                end,
+                mode = "v",
+                noremap = true,
+                silent = true,
+                expr = false,
+            },
+        },
+        opts = {},
+    },
 }
