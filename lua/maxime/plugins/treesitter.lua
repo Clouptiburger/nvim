@@ -13,7 +13,7 @@ local M = {
     },
 }
 
-function M.config()
+function M.init()
     require("nvim-treesitter.configs").setup({
         ensure_installed = {
             "bash",
@@ -24,7 +24,6 @@ function M.config()
             "css",
             "diff",
             "fish",
-            "gitignore",
             "go",
             "graphql",
             "help",
@@ -49,9 +48,7 @@ function M.config()
             "regex",
             "rust",
             "scss",
-            "sql",
             "svelte",
-            "teal",
             "toml",
             "tsx",
             "typescript",
