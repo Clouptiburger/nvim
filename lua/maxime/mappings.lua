@@ -13,6 +13,7 @@ vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
+-- Replace by mini.move
 -- -- Move current line / block with Alt-j/k ala vscode.
 -- vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
 -- -- Move current line / block with Alt-j/k ala vscode.
