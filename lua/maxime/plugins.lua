@@ -58,7 +58,10 @@ return {
                     code_action = "",
                 }
             })
-        end
+        end,
+        dependencies = { {
+            'kyazdani42/nvim-web-devicons'
+        } }
     },
     { "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
