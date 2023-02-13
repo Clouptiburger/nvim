@@ -109,7 +109,7 @@ function M.config()
         cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
     })
     -- Fit Undefined global 'vim'
-    lsp.configure('sumneko_lua', {
+    lsp.configure('lua-ls', {
         settings = {
             Lua = {
                 diagnostics = {

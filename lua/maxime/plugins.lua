@@ -63,6 +63,15 @@ return {
             'kyazdani42/nvim-web-devicons'
         } }
     },
+    { "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        config = function()
+            require("todo-comments").setup({
+            })
+        end,
+    },
     { "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
         dependencies = {
