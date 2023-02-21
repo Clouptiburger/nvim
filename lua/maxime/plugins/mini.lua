@@ -29,7 +29,7 @@ function M.pairs()
 end
 
 function M.bracketed()
-    require("mini.bracketed").setup({})
+    require("mini.bracketed").setup()
 end
 
 function M.comment()
