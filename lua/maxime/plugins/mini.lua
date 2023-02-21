@@ -28,6 +28,10 @@ function M.pairs()
     require("mini.pairs").setup({})
 end
 
+function M.bracketed()
+    require("mini.bracketed").setup({})
+end
+
 function M.comment()
     require("mini.comment").setup({
         hooks = {
@@ -84,6 +88,7 @@ function M.config()
     -- M.pairs()
     M.move()
     M.comment()
+    M.bracketed()
 end
 
 function M.init()
