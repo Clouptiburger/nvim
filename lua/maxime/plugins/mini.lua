@@ -1,5 +1,6 @@
 local M = {
     "echasnovski/mini.nvim",
+    version = false, 
     event = "VeryLazy",
     dependencies = {
         { "JoosepAlviste/nvim-ts-context-commentstring" },
@@ -26,6 +27,10 @@ end
 
 function M.pairs()
     require("mini.pairs").setup({})
+end
+
+function M.bracketed()
+    require("mini.bracketed").setup()
 end
 
 function M.comment()
@@ -84,6 +89,7 @@ function M.config()
     -- M.pairs()
     M.move()
     M.comment()
+    M.bracketed()
 end
 
 function M.init()
