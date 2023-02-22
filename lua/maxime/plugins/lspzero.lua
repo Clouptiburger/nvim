@@ -87,7 +87,7 @@ function M.config()
         vim.keymap.set("n", "<M-C-L>", vim.lsp.buf.format, bufopts)
         vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float)
     end
 
     lsp.on_attach(on_attach)
