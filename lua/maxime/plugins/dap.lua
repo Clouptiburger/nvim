@@ -52,13 +52,13 @@ function M.init()
         require("dapui").toggle({})
     end, { desc = "Dap UI" })
 
-    vim.keymap.set("n", "<leader>ds", function()
-        require("osv").launch({ port = 8086 })
-    end, { desc = "Launch Lua Debugger Server" })
-
-    vim.keymap.set("n", "<leader>dd", function()
-        require("osv").run_this()
-    end, { desc = "Launch Lua Debugger" })
+    -- vim.keymap.set("n", "<leader>ds", function()
+    --     require("osv").launch({ port = 8086 })
+    -- end, { desc = "Launch Lua Debugger Server" })
+    --
+    -- vim.keymap.set("n", "<leader>dd", function()
+    --     require("osv").run_this()
+    -- end, { desc = "Launch Lua Debugger" })
 
     vim.keymap.set('n', "<leader>de", require("dapui").eval, { desc = "Dap Eval" })
 
