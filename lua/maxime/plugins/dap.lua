@@ -1,6 +1,5 @@
 local M = {
     "mfussenegger/nvim-dap",
-
     dependencies = {
         {
             "rcarriga/nvim-dap-ui",
@@ -43,10 +42,6 @@ function M.init()
     vim.keymap.set("n", "<leader>dw", function()
         require("dap.ui.widgets").hover()
     end, { desc = "Widgets" })
-
-    vim.keymap.set("n", "<leader>dr", function()
-        require("dap").repl.open()
-    end, { desc = "Repl" })
 
     vim.keymap.set("n", "<leader>du", function()
         require("dapui").toggle({})

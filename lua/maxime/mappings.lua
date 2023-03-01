@@ -59,4 +59,4 @@ vim.keymap.set('n', 'x', '"_x') -- no yank with x
 vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
 
 
-vim.keymap.set('n', "<leader>cd", "<cmd>Trouble<cr>", { desc = "Code Diagnostics" })
+vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Code Diagnostics" })
