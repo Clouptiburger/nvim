@@ -60,3 +60,6 @@ vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
 
 
 vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Code Diagnostics" })
+
+
+vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
