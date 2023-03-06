@@ -38,12 +38,12 @@ function M.config()
     local cmp = require('cmp')
     -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
+            ['<C-p>'] = cmp.mapping.select_prev_item(),
+            ['<C-k>'] = cmp.mapping.select_prev_item(),
+            ['<C-n>'] = cmp.mapping.select_next_item(),
+            ['<C-j>'] = cmp.mapping.select_next_item(),
+            ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+            ["<C-Space>"] = cmp.mapping.complete(),
     })
 
     -- disable completion with tab
@@ -136,6 +136,14 @@ function M.config()
         }
     })
     lsp.setup()
+    lsp.setup_nvim_cmp({
+        sources = {
+            { name = 'path' },
+            { name = 'nvim_lsp', keyword_length = 1 },
+            { name = 'buffer',   keyword_length = 3 },
+            { name = 'luasnip',  keyword_length = 2 },
+        }
+    })
 end
 
 -- function M.init()
