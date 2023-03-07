@@ -38,12 +38,12 @@ function M.config()
     local cmp = require('cmp')
     -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local cmp_mappings = lsp.defaults.cmp_mappings({
-            ['<C-p>'] = cmp.mapping.select_prev_item(),
-            ['<C-k>'] = cmp.mapping.select_prev_item(),
-            ['<C-n>'] = cmp.mapping.select_next_item(),
-            ['<C-j>'] = cmp.mapping.select_next_item(),
-            ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-            ["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
     })
 
     -- disable completion with tab
@@ -83,8 +83,12 @@ function M.config()
         vim.keymap.set("n", "<leader>ci", ":Lspsaga incoming_calls<CR>", bufopts)
         vim.keymap.set("n", "<leader>gr", ":Lspsaga lsp_finder<CR>", bufopts)
         vim.keymap.set("n", "gr", ":Lspsaga lsp_finder<CR>", bufopts)
+        -- nvim
         vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, bufopts)
+        -- jetbrains
         vim.keymap.set("n", "<M-C-L>", vim.lsp.buf.format, bufopts)
+        -- vscode
+        vim.keymap.set("n", "<S-M-F>", vim.lsp.buf.format, bufopts)
         vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
