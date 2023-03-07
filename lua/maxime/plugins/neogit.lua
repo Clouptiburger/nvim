@@ -1,7 +1,7 @@
 return {
     "TimUntersberger/neogit",
     cmd = "Neogit",
-    lazy = false,
+    lazy = true,
     config = function()
         require("neogit").setup({
             kind = "split",
