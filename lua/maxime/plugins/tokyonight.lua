@@ -1,5 +1,5 @@
 local M = {
-    enabled = true,
+    enabled = false,
     "folke/tokyonight.nvim",
     lazy = false,
 }

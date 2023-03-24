@@ -4,7 +4,8 @@ return {
     "folke/which-key.nvim",
     "nvim-treesitter/nvim-treesitter-context",
     "sindrets/diffview.nvim",
-    { "lukas-reineke/indent-blankline.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
         enabled = false,
         config = function()
             require("indent_blankline").setup {
@@ -63,7 +64,8 @@ return {
             'kyazdani42/nvim-web-devicons'
         } }
     },
-    { "folke/todo-comments.nvim",
+    {
+        "folke/todo-comments.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
@@ -72,7 +74,8 @@ return {
             })
         end,
     },
-    { "folke/trouble.nvim",
+    {
+        "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
         dependencies = {
             'kyazdani42/nvim-web-devicons'
@@ -124,5 +127,5 @@ return {
             },
         },
         opts = {},
-    },
+    }
 }

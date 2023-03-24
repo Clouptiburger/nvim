@@ -124,10 +124,14 @@ function M.config()
         }
     })
 
+    local util = require("lspconfig").util
     local rust_lsp = lsp.build_options('rust_analyzer', {})
     local rt = require("rust-tools")
     rt.setup({
         server = rust_lsp
+    })
+    lsp.configure('gopls', {
+        root_dir = util.root_pattern('go.mod')
     })
     lsp.configure('pyright', {
         settings = {

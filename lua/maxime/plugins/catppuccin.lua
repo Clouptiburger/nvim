@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     "catppuccin/nvim",
     name = "catppuccin"
 }
@@ -8,7 +8,8 @@ local M = {
 function M.config()
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = { -- :h background
+        background = {
+            -- :h background
             light = "latte",
             dark = "mocha",
         },
@@ -20,7 +21,7 @@ function M.config()
             percentage = 0.15,
         },
         no_italic = true, -- Force no italic
-        no_bold = false, -- Force no bold
+        no_bold = false,  -- Force no bold
         styles = {
             comments = {},
             conditionals = {},

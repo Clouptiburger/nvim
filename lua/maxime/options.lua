@@ -1,5 +1,4 @@
 vim.cmd "set mouse=a"
-vim.cmd "lan en_US.UTF-8"
 -- Don't pass messages to |ins-completion-menu|.
 -- vim.opt.shortmess:append("c")
 
