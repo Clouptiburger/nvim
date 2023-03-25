@@ -14,7 +14,6 @@ function M.config()
         disable_background = true,
         disable_float_background = true,
         disable_italics = true,
-
         --- @usage string hex value or named color from rosepinetheme.com/palette
         groups = {
             background = 'base',
@@ -23,12 +22,10 @@ function M.config()
             comment = 'muted',
             link = 'iris',
             punctuation = 'subtle',
-
             error = 'love',
             hint = 'iris',
             info = 'foam',
             warn = 'gold',
-
             headings = {
                 h1 = 'iris',
                 h2 = 'foam',
@@ -40,7 +37,6 @@ function M.config()
             -- or set all headings at once
             -- headings = 'subtle'
         },
-
         -- Change specific vim highlight groups
         highlight_groups = {
             ColorColumn = { bg = 'rose' }
