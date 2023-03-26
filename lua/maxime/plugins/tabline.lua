@@ -8,12 +8,11 @@ local M = {
 
 
 function M.config()
-    require 'tabline'.setup { options = {
-        show_filename_only = true,
-        modified_italic    = false,
-        show_tabs_only     = true,
-        show_tabs_always   = true,
-    } }
+    require 'tabline'.setup {
+        options = {
+            show_filename_only = true,
+            modified_italic    = false,
+        } }
 end
 
 return M
