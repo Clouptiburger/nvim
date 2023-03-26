@@ -3,12 +3,11 @@ local M = {
     dependencies = {
         {
             "rcarriga/nvim-dap-ui",
-
             config = function()
                 require("dapui").setup()
             end,
         },
-    { "theHamsta/nvim-dap-virtual-text" },
+        { "theHamsta/nvim-dap-virtual-text" },
         { "mfussenegger/nvim-dap-python" },
         { "leoluz/nvim-dap-go" }
     },

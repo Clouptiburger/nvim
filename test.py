@@ -8,4 +8,3 @@ if __name__ == "__main__":
     a:int = 1
     coucou(a)
     coucou(1)
-

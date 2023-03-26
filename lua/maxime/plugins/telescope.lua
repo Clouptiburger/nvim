@@ -3,8 +3,11 @@ local M = {
     cmd = { "Telescope" },
     dependencies = {
         { "nvim-telescope/telescope-file-browser.nvim" },
-        -- { "nvim-telescope/telescope-project.nvim" },
+        { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-symbols.nvim" },
+        -- { "nvim-telescope/telescope-frecency.nvim" },
+        -- { "kkharji/sqlite.lua" }, -- used by frecency
+        { "nvim-telescope/telescope-dap.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim",  build = "make" },
     },
 }
@@ -90,7 +93,8 @@ function M.config()
     -- telescope.load_extension("frecency")
     telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
-    -- telescope.load_extension("project")
+    telescope.load_extension("dap")
+    telescope.load_extension("project")
 end
 
 function M.init()
@@ -128,6 +132,8 @@ function M.init()
     vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser, { desc = "Telescope File Browser" })
     vim.keymap.set('n', "<leader>fI", function() require('maxime.custom').live_grep_shortcuts({ previewer = false }) end
     , { desc = "Telescope Live Grep [NO PREVIEW]" })
+    vim.keymap.set('n', "<leader>fp", require('telescope').extensions.project.project,
+        { desc = "Telescope Projects" })
 end
 
 return M
