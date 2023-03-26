@@ -8,8 +8,7 @@ local M = {
                 require("dapui").setup()
             end,
         },
-        { "jbyuki/one-small-step-for-vimkind" },
-        { "theHamsta/nvim-dap-virtual-text" },
+    { "theHamsta/nvim-dap-virtual-text" },
         { "mfussenegger/nvim-dap-python" },
         { "leoluz/nvim-dap-go" }
     },
@@ -77,13 +76,13 @@ function M.init()
 
     require("dap-go").setup()
 
-    dap.configurations.lua = {
-        {
-            type = "nlua",
-            request = "attach",
-            name = "Attach to running Neovim instance",
-        },
-    }
+    -- dap.configurations.lua = {
+    --     {
+    --         type = "nlua",
+    --         request = "attach",
+    --         name = "Attach to running Neovim instance",
+    --     },
+    -- }
 
     local dapui = require("dapui")
     dap.adapters.nlua = function(callback, config)

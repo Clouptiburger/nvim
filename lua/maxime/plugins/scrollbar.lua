@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     "petertriho/nvim-scrollbar",
     event = "BufReadPost",
 }

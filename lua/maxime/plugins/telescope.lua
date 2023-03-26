@@ -1,12 +1,11 @@
 local M = {
     "nvim-telescope/telescope.nvim",
     cmd = { "Telescope" },
-
     dependencies = {
         { "nvim-telescope/telescope-file-browser.nvim" },
         -- { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-symbols.nvim" },
-        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        { "nvim-telescope/telescope-fzf-native.nvim",  build = "make" },
     },
 }
 
@@ -20,10 +19,10 @@ function M.config()
     telescope.setup({
         extensions = {
             fzf = {
-                fuzzy = true, -- false will only do exact matching
+                fuzzy = true,                   -- false will only do exact matching
                 override_generic_sorter = true, -- override the generic sorter
-                override_file_sorter = true, -- override the file sorter
-                case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+                override_file_sorter = true,    -- override the file sorter
+                case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                 -- the default case_mode is "smart_case"
             }
         },
@@ -128,7 +127,7 @@ function M.init()
     vim.keymap.set('n', "<leader>fi", require('maxime.custom').live_grep_shortcuts, { desc = "Telescope Live Grep" })
     vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser, { desc = "Telescope File Browser" })
     vim.keymap.set('n', "<leader>fI", function() require('maxime.custom').live_grep_shortcuts({ previewer = false }) end
-        , { desc = "Telescope Live Grep [NO PREVIEW]" })
+    , { desc = "Telescope Live Grep [NO PREVIEW]" })
 end
 
 return M

@@ -3,7 +3,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "folke/which-key.nvim",
     "nvim-treesitter/nvim-treesitter-context",
-    "sindrets/diffview.nvim",
     {
         "lukas-reineke/indent-blankline.nvim",
         enabled = false,
@@ -16,6 +15,7 @@ return {
         end,
     },
     {
+        -- A simple statusline/winbar component that uses LSP to show your current code context. Named after the Indian satellite navigation system.
         "SmiteshP/nvim-navic",
         enabled = false,
         config = function()
@@ -91,18 +91,6 @@ return {
         "ray-x/lsp_signature.nvim",
         config = function()
             require('lsp_signature').setup()
-        end
-    },
-    {
-        "stevearc/aerial.nvim",
-        keys = { { "<leader>cs", "<cmd>AerialToggle!<cr>", desc = "Symbols Outline" } },
-        config = true,
-    },
-
-    {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require('colorizer').setup()
         end
     },
 
