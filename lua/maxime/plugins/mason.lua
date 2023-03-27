@@ -7,7 +7,6 @@ M.tools = {
     "luacheck",
     "eslint_d",
     "shellcheck",
-    "black",
 }
 
 function M.check()
@@ -22,7 +21,7 @@ end
 
 function M.config()
     require("mason").setup()
-    M.check()
+    -- M.check()
     require("mason-lspconfig").setup({
         automatic_installation = true,
     })
