@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     "navarasu/onedark.nvim",
     lazy = false
 }
@@ -40,11 +40,8 @@ function M.config()
         --     background = true, -- use background color for virtual text
         -- },
     }
-    require('onedark').load()
+    -- require('onedark').load()
 end
 
-function M.init()
-    require('onedark').load()
-end
 
 return M

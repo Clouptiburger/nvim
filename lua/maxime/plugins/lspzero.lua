@@ -133,6 +133,10 @@ function M.config()
     lsp.configure('gopls', {
         root_dir = util.root_pattern('go.mod')
     })
+
+    lsp.configure('html', {
+    })
+
     lsp.configure('pyright', {
         settings = {
             python = {
@@ -147,7 +151,7 @@ function M.config()
     lsp.setup_nvim_cmp({
         sources = {
             { name = 'path' },
-            { name = 'nvim_lsp', keyword_length = 1 },
+            { name = 'nvim_lsp', keyword_length = 0 },
             { name = 'buffer',   keyword_length = 3 },
             { name = 'luasnip',  keyword_length = 2 },
         }

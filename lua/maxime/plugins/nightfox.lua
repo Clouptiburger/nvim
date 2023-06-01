@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     "EdenEast/nightfox.nvim",
 }
 
@@ -41,7 +41,7 @@ function M.config()
     })
 
     -- setup must be called before loading
-    vim.cmd("colorscheme nightfox") -- nightfox, duskfox, terafox, carbonfox
+    -- vim.cmd("colorscheme nightfox") -- nightfox, duskfox, terafox, carbonfox
 end
 
 return M

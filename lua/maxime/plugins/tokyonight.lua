@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     "folke/tokyonight.nvim",
     lazy = false,
 }
@@ -68,7 +68,7 @@ function M.config()
             -- end
         end,
     })
-    tokyonight.load()
+    -- tokyonight.load()
 end
 
 return M
