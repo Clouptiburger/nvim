@@ -13,6 +13,5 @@ return {
             persist_size = true,
             direction = "horizontal",
         })
-
     end,
 }
