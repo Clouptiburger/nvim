@@ -7,8 +7,9 @@ local M = {
         { "nvim-telescope/telescope-symbols.nvim" },
         -- { "nvim-telescope/telescope-frecency.nvim" },
         -- { "kkharji/sqlite.lua" }, -- used by frecency
+        { "nvim-telescope/telescope-live-grep-args.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
-        { "nvim-telescope/telescope-fzf-native.nvim",  build = "make" },
+        { "nvim-telescope/telescope-fzf-native.nvim",    build = "make" },
     },
 }
 
@@ -27,6 +28,17 @@ function M.config()
                 override_file_sorter = true,    -- override the file sorter
                 case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                 -- the default case_mode is "smart_case"
+            },
+
+            live_grep_args = {
+                auto_quoting = true,
+                mappings = {
+                    i = {
+
+                    }
+                }
+
+
             }
         },
         defaults = {
@@ -95,6 +107,7 @@ function M.config()
     telescope.load_extension("file_browser")
     telescope.load_extension("dap")
     telescope.load_extension("project")
+    telescope.load_extension("live_grep_args")
 end
 
 function M.init()

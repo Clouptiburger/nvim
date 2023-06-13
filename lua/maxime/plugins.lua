@@ -1,6 +1,5 @@
 return {
     "nvim-lua/plenary.nvim",
-    "williamboman/mason-lspconfig.nvim",
     "folke/which-key.nvim",
     "nvim-treesitter/nvim-treesitter-context",
     {

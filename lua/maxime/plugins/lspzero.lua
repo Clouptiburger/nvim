@@ -1,6 +1,8 @@
 local M = {
     'VonHeikemen/lsp-zero.nvim',
     -- event = "BufReadPre",
+
+    enabled = false,
     dependencies = {
         -- LSP Support
         { 'neovim/nvim-lspconfig' },
@@ -28,33 +30,15 @@ function M.config()
     -- require("mason").setup()
     -- require("mason-lspconfig").setup()
     local lsp = require('lsp-zero')
-    lsp.preset("recommended")
-    lsp.nvim_workspace()
-    lsp.set_preferences({
-        set_lsp_keymaps = false,
+    lsp.preset({
+        float_border = 'rounded',
+        call_servers = 'local',
         configure_diagnostics = false,
+        setup_servers_on_start = true,
+        set_lsp_keymaps = false,
     })
+    -- lsp.nvim_lua_ls()
 
-    local cmp = require('cmp')
-    -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
-    local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-i>'] = cmp.mapping.complete(),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    })
-
-    -- disable completion with tab
-    -- this helps with copilot setup
-    cmp_mappings['<Tab>'] = nil
-    cmp_mappings['<S-Tab>'] = nil
-
-    lsp.setup_nvim_cmp({
-        mapping = cmp_mappings
-    })
 
 
     local on_attach = function(_, bufnr)
@@ -106,7 +90,7 @@ function M.config()
 
 
     vim.diagnostic.config({
-        virtual_text = true,
+        virtual_text = true
     })
     lsp.configure("marksman", {
         cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
@@ -145,19 +129,57 @@ function M.config()
             },
         }
     })
+
+    -- local cmp = require('cmp')
+    -- -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    -- local cmp_mappings = lsp.defaults.cmp_mappings({
+    --     ['<C-p>'] = cmp.mapping.select_prev_item(),
+    --     ['<C-k>'] = cmp.mapping.select_prev_item(),
+    --     ['<C-n>'] = cmp.mapping.select_next_item(),
+    --     ['<C-j>'] = cmp.mapping.select_next_item(),
+    --     ['<C-i>'] = cmp.mapping.complete(),
+    --     ['<C-e>'] = cmp.mapping.abort(),
+    --     ['TAB'] = nil,
+    --     ['<S-TAB>'] = nil,
+    --     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    -- })
+
+    -- disable completion with tab
+    -- this helps with copilot setup
+    -- cmp_mappings['<Tab>'] = nil
+    -- cmp_mappings['<S-Tab>'] = nil
+
+    -- lsp.setup_nvim_cmp({
+    --     -- mapping = cmp_mappings,
+    --     sources = {
+    --         { name = 'path' },
+    --         { name = 'nvim_lsp', keyword_length = 0 },
+    --         { name = 'buffer',   keyword_length = 3 },
+    --         { name = 'luasnip',  keyword_length = 2 },
+    --     }
+    -- })
     lsp.setup()
-    lsp.setup_nvim_cmp({
-        sources = {
-            { name = 'path' },
-            { name = 'nvim_lsp', keyword_length = 0 },
-            { name = 'buffer',   keyword_length = 3 },
-            { name = 'luasnip',  keyword_length = 2 },
-        }
-    })
+
+    local cmp = require('cmp')
+    cmp.setup()
+
+    -- cmp.setup({
+    --     mapping = {
+    --         ['<C-p>'] = cmp.mapping.select_prev_item(),
+    --         ['<C-k>'] = cmp.mapping.select_prev_item(),
+    --         ['<C-n>'] = cmp.mapping.select_next_item(),
+    --         ['<C-j>'] = cmp.mapping.select_next_item(),
+    --         ['<C-i>'] = cmp.mapping.complete(),
+    --         ['<C-e>'] = cmp.mapping.abort(),
+    --         ['TAB'] = nil,
+    --         ['<S-TAB>'] = nil,
+    --         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    --     }
+    -- })
 end
 
--- function M.init()
 --     lsp.configurt("marksman", {
+-- function M.init()
 --         cmd = { vim.fn.stdpath('data') .. "\\mason\\packages\\marksman\\marksman.exe" }, -- works on windows, lets check linux later
 --     })
 --     -- Fit Undefined global 'vim'
