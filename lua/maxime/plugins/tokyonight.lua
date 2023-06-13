@@ -18,7 +18,7 @@ function M.config()
             -- "packer",
             "spectre_panel",
             "NeogitStatus",
-            "help",
+            -- "help",
             "startuptime",
             "Outline",
         },

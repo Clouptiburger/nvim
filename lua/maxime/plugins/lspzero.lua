@@ -42,8 +42,9 @@ function M.config()
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<C-i>'] = cmp.mapping.complete(),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
     })
 
     -- disable completion with tab
@@ -56,27 +57,24 @@ function M.config()
     })
 
 
-    -- local navic = require("nvim-navic")
     local on_attach = function(_, bufnr)
-        -- navic.attach(client, bufnr)
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-        -- Enable completion triggered by <c-x><c-o>
         -- Mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
         vim.keymap.set("n", "<leader><C-k>", vim.lsp.buf.signature_help, bufopts)
         vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
         vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
         vim.keymap.set("n", "<leader>wl", function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, bufopts)
-        vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, bufopts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, bufopts)
         -- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
         vim.keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>", bufopts)
         vim.keymap.set("n", "<leader>co", ":Lspsaga outgoing_calls<CR>", bufopts)
