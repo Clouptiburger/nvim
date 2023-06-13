@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     'rose-pine/neovim',
     name = 'rose-pine',
 }
@@ -42,9 +42,6 @@ function M.config()
             ColorColumn = { bg = 'rose' }
         }
     })
-
-    -- set colorscheme after options
-    vim.cmd('colorscheme rose-pine')
 end
 
 return M
