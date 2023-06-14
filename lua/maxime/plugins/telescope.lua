@@ -141,10 +141,12 @@ function M.init()
     vim.keymap.set('n', "<leader>fsw", require('telescope.builtin').lsp_dynamic_workspace_symbols,
         { desc = "Telescope Workspace Symbols" })
 
-    vim.keymap.set('n', "<leader>fi", require('maxime.custom').live_grep_shortcuts, { desc = "Telescope Live Grep" })
+    vim.keymap.set('n', "<leader>fi", require('telescope').extensions.live_grep_args.live_grep_args,
+        { desc = "Telescope Live Grep" })
+    vim.keymap.set('n', "<leader>fI",
+        function() require('telescope').extensions.live_grep_args.live_grep_args({ previewer = false }) end
+        , { desc = "Telescope Live Grep [NO PREVIEW]" })
     vim.keymap.set('n', "<leader>fe", require('maxime.custom').file_browser, { desc = "Telescope File Browser" })
-    vim.keymap.set('n', "<leader>fI", function() require('maxime.custom').live_grep_shortcuts({ previewer = false }) end
-    , { desc = "Telescope Live Grep [NO PREVIEW]" })
     vim.keymap.set('n', "<leader>fp", require('telescope').extensions.project.project,
         { desc = "Telescope Projects" })
 end
