@@ -17,6 +17,9 @@ function M.config()
         filesystem = {
             follow_current_file = true,
             hijack_netrw_behavior = "open_current",
+            filtered_items = {
+                visible = true, -- when true, they will just be displayed differently than normal items
+            }
         },
     })
     vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeRevealToggle<CR>", { desc = "Open File Tree" })

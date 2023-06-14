@@ -126,6 +126,7 @@ function M.init()
         { desc = "Telescope Current Buffer Search" })
     vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter, { desc = "Telescope Treesitter Search" })
     vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin, { desc = "Telescope Builtins" })
+    vim.keymap.set('n', '<leader><leader>f', require('telescope.builtin').builtin, { desc = "Telescope Builtins" })
     --vim.keymap.set('n', '<leader>fc', ":Telescope neoclip<CR>", { desc = "Telescope neoclip (clipboard)" })
     vim.keymap.set('n', "gR", require('telescope.builtin').lsp_references, { desc = "Telescope LSP References" })
     vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations,
