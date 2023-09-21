@@ -63,3 +63,9 @@ vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Co
 
 
 vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
+
+-- Diagnostic keymaps
+vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })

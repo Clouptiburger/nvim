@@ -5,6 +5,5 @@ def coucou(a: str):
 
 if __name__ == "__main__":
     print("coucou")
-    a:int = 1
-    coucou(a)
-    coucou(1)
+    coucou("hello")
+

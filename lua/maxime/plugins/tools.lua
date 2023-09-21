@@ -1,6 +1,7 @@
 return {
     'norcalli/nvim-colorizer.lua',
     event = "BufReadPre",
+    enabled = false,
     opts = {
         filetypes = { "*", "!lazy" },
         buftype = { "*", "!prompt", "!nofile" },
@@ -50,21 +51,6 @@ return {
         opts = {
             theme = "light",
             -- app = "browser"
-        },
-    },
-    -- Chat GPT plugin, doesn't seem to work for now :(
-    {
-        "jackMort/ChatGPT.nvim",
-        enabled = false,
-        cmd = { "ChatGPTActAs", "ChatGPT" },
-        opts = {},
-        config = function()
-            require('chatgpt').setup()
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
         },
     },
 }

@@ -1,5 +1,6 @@
 local M = {
     "ray-x/go.nvim",
+    enabled = false,
     dependencies = {
         "ray-x/guihua.lua",
     },

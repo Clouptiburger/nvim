@@ -34,23 +34,8 @@ return {
         end,
     },
     {
-        "j-hui/fidget.nvim",
-        config = function()
-            require("fidget").setup {
-                text = {
-                    spinner = "moon",
-                },
-                align = {
-                    bottom = true,
-                },
-                window = {
-                    relative = "editor",
-                },
-            }
-        end
-    },
-    {
         'glepnir/lspsaga.nvim',
+        enabled = false,
         event = 'BufRead',
         config = function()
             require('lspsaga').setup({
@@ -65,6 +50,7 @@ return {
     },
     {
         "folke/todo-comments.nvim",
+        enabled = false,
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
@@ -74,6 +60,7 @@ return {
         end,
     },
     {
+        enabled = false,
         "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
         dependencies = {
@@ -87,6 +74,7 @@ return {
         end,
     },
     {
+        enabled = false,
         "ray-x/lsp_signature.nvim",
         config = function()
             require('lsp_signature').setup()
@@ -108,6 +96,7 @@ return {
     },
     {
         "ThePrimeagen/refactoring.nvim",
+        enabled = false,
         keys = {
             {
                 "<leader>cr",
@@ -122,12 +111,4 @@ return {
         },
         opts = {},
     },
-    {
-        "folke/neodev.nvim",
-        config = function()
-            require("neodev").setup({ library = { plugins = { "nvim-dap-ui" }, types = true } })
-        end
-    }
-
-
 }
