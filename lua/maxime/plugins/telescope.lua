@@ -2,7 +2,7 @@ local M = {
     "nvim-telescope/telescope.nvim",
     cmd = { "Telescope" },
     dependencies = { { "nvim-telescope/telescope-file-browser.nvim" }, { "nvim-telescope/telescope-project.nvim" },
-        { "nvim-telescope/telescope-symbols.nvim" },           -- { "nvim-telescope/telescope-frecency.nvim" },
+        { "nvim-telescope/telescope-symbols.nvim" }, -- { "nvim-telescope/telescope-frecency.nvim" },
         -- { "kkharji/sqlite.lua" }, -- used by frecency
         { "nvim-telescope/telescope-live-grep-args.nvim" }, { "nvim-telescope/telescope-dap.nvim" }, {
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -111,10 +111,10 @@ function M.init()
         desc = "Telescope LSP Implementations"
     })
 
-    vim.keymap.set('n', "<leader>wd", require('telescope.builtin').lsp_document_symbols, {
+    vim.keymap.set('n', "<leader>ds", require('telescope.builtin').lsp_document_symbols, {
         desc = "Telescope Document Symbols"
     })
-    vim.keymap.set('n', "<leader>ww", require('telescope.builtin').lsp_dynamic_workspace_symbols, {
+    vim.keymap.set('n', "<leader>ws", require('telescope.builtin').lsp_dynamic_workspace_symbols, {
         desc = "Telescope Workspace Symbols"
     })
 
