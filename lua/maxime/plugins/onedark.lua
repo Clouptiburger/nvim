@@ -6,7 +6,7 @@ local M = {
 
 function M.config()
     require("onedark").setup({
-        style = "darker",
+        style = "deep",
         code_style = {
             comments = 'none',
             keywords = 'none',
