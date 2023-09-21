@@ -3,8 +3,8 @@ local M = {
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
-        icons_enabled = false,
         options = {
+            icons_enabled = false,
             theme = 'onedark',
             component_separators = '|',
             section_separators = '',
