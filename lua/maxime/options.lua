@@ -2,7 +2,11 @@ vim.cmd "set mouse=a"
 -- Don't pass messages to |ins-completion-menu|.
 -- vim.opt.shortmess:append("c")
 
-vim.g.mapleader = " "
+vim.cmd("lan en")
+vim.cmd("set rnu")
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 -- vim.cmd "set foldmethod=indent"
 
 vim.g.netrw_winsize = 30
