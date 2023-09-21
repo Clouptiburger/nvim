@@ -102,7 +102,9 @@ function M.config()
         end, { desc = 'Format current buffer with LSP' })
 
         -- toggles inlay hints
-        nmap("<leader>ih", function() vim.lsp.inlay_hint(0, nil) end, "[I]nlay [H]ints")
+        if vim.lsp.inlay_hint then
+            nmap("<leader>ih", function() vim.lsp.inlay_hint(0, nil) end, "[I]nlay [H]ints")
+        end
     end
 
     require("neodev").setup({})
