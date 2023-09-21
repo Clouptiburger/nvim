@@ -34,7 +34,7 @@ local default_options = {
     splitright = true,      -- force all vertical splits to go to the right of current window
     swapfile = false,       -- creates a swapfile
     title = true,           -- set the title of window to the value of the titlestring
-    -- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
+	--  titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
     writebackup = false,    -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     cursorline = true,      -- highlight the current line
     signcolumn = "yes",     -- always show the sign column, otherwise it would shift the text each time
