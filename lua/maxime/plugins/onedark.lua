@@ -1,6 +1,6 @@
 local M = {
-    enabled = true,
     'navarasu/onedark.nvim',
+    enabled = true,
     priority = 1000,
 }
 

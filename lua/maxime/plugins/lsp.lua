@@ -47,6 +47,7 @@ function M.config()
             Lua = {
                 workspace = { checkThirdParty = false },
                 telemetry = { enable = false },
+                hint = { enable = true },
             },
         },
     }
@@ -99,6 +100,9 @@ function M.config()
         vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
             vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
+
+        -- toggles inlay hints
+        nmap("<leader>ih", function() vim.lsp.inlay_hint(0, nil) end, "[I]nlay [H]ints")
     end
 
     require("neodev").setup({})
