@@ -103,28 +103,6 @@ function M.init()
     vim.keymap.set('n', '<leader><leader>f', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
-    -- vim.keymap.set('n', '<leader>fc', ":Telescope neoclip<CR>", { desc = "Telescope neoclip (clipboard)" })
-    vim.keymap.set('n', "gR", require('telescope.builtin').lsp_references, {
-        desc = "Telescope LSP References"
-    })
-    vim.keymap.set('n', "gI", require('telescope.builtin').lsp_implementations, {
-        desc = "Telescope LSP Implementations"
-    })
-
-    vim.keymap.set('n', "<leader>ds", require('telescope.builtin').lsp_document_symbols, {
-        desc = "Telescope Document Symbols"
-    })
-    vim.keymap.set('n', "<leader>ws", require('telescope.builtin').lsp_dynamic_workspace_symbols, {
-        desc = "Telescope Workspace Symbols"
-    })
-
-    vim.keymap.set('n', "<leader>fsd", require('telescope.builtin').lsp_document_symbols, {
-        desc = "Telescope Document Symbols"
-    })
-    vim.keymap.set('n', "<leader>fsw", require('telescope.builtin').lsp_dynamic_workspace_symbols, {
-        desc = "Telescope Workspace Symbols"
-    })
-
     vim.keymap.set('n', "<leader>fi", require('telescope').extensions.live_grep_args.live_grep_args, {
         desc = "Telescope Live Grep"
     })
