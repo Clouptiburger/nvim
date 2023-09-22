@@ -97,10 +97,13 @@ function M.init()
     vim.keymap.set('n', "<leader>ft", require('telescope.builtin').treesitter, {
         desc = "Telescope Treesitter Search"
     })
+    vim.keymap.set('n', '<C-<space>>', require('telescope.builtin').builtin, {
+        desc = "Telescope Builtins"
+    })
     vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
-    vim.keymap.set('n', '<leader><leader>f', require('telescope.builtin').builtin, {
+    vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
     vim.keymap.set('n', "<leader>fi", require('telescope').extensions.live_grep_args.live_grep_args, {
