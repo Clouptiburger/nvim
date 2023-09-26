@@ -37,11 +37,11 @@ function M.config()
         -- tsserver = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-        pyright = {
-            analysis = {
-                typeCheckingMode = "off",
-            },
-        },
+        -- pyright = {
+        --     analysis = {
+        --         typeCheckingMode = "off",
+        --     },
+        -- },
 
         lua_ls = {
             Lua = {
