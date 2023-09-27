@@ -59,15 +59,15 @@ vim.keymap.set('n', 'x', '"_x') -- no yank with x
 vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
 
 
-vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Code Diagnostics" })
+-- vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Code Diagnostics" })
 
 
 vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Open float diagnostic" })
 vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Keymaps for better default experience
