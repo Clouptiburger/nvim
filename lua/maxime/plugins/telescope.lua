@@ -44,7 +44,8 @@ function M.config()
                 i = {
                     -- ["<c-t>"] = trouble.open_with_trouble,
                     ["<C-Down>"] = require("telescope.actions").cycle_history_next,
-                    ["<C-Up>"] = require("telescope.actions").cycle_history_prev
+                    ["<C-Up>"] = require("telescope.actions").cycle_history_prev,
+                    ["<C-f>"] = require("telescope.actions").to_fuzzy_refine
                 }
             },
         }
