@@ -2,8 +2,9 @@ local M = {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-        'nvim-treesitter/nvim-treesitter-textobjects',
+        "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-context",
+        "nvim-treesitter/nvim-treesitter-refactor"
     },
     build = ':TSUpdate',
 }
@@ -29,6 +30,13 @@ function M.init()
                 node_incremental = '<c-space>',
                 scope_incremental = '<c-s>',
                 node_decremental = '<M-space>',
+            },
+        },
+        refactor = {
+            highlight_definitions = {
+                enable = true,
+                -- Set to false if you have an `updatetime` of ~100.
+                clear_on_cursor_move = false,
             },
         },
         textobjects = {
