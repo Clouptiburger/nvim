@@ -35,7 +35,12 @@ function M.config()
         -- gopls = {},
         -- rust_analyzer = {},
         -- tsserver = {},
-        -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+        html = {
+            css = { lint = { validProperties = {} } },
+            html = { suggest = { html5 = true } },
+            htmlhint = { enable = true },
+            filetypes = { 'html', 'twig', 'hbs' },
+        },
 
         -- pyright = {
         --     analysis = {
