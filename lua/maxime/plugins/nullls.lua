@@ -1,4 +1,5 @@
 local M = {
+    enabled = false,
     'jose-elias-alvarez/null-ls.nvim'
 }
 
