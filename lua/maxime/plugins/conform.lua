@@ -1,4 +1,5 @@
 local M = {
+    enabled = false,
     'stevearc/conform.nvim',
     opts = {},
 }
