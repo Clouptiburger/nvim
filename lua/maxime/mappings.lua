@@ -66,7 +66,9 @@ vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>cj", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "<F2>", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "<leader>ck", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "<S-<F2>>", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Open float diagnostic" })
 vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
@@ -81,3 +83,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Remap for AZERTY convienient mappings
 vim.keymap.set('n', 'à', ']', { remap = true })
 vim.keymap.set('n', 'ç', '[', { remap = true })
+
+
+-- remap for comments
+vim.keymap.set('n', '', 'gcc', { remap = true })
+vim.keymap.set('v', '', 'gc', { remap = true })

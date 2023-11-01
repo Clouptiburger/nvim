@@ -1,4 +1,3 @@
-
 def coucou(a: str):
     print(a)
 
@@ -6,4 +5,3 @@ def coucou(a: str):
 if __name__ == "__main__":
     print("coucou")
     coucou("hello")
-
