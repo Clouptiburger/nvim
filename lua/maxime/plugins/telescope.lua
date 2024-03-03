@@ -3,9 +3,11 @@ local M = {
     cmd = { "Telescope" },
     dependencies = { { "nvim-telescope/telescope-file-browser.nvim" }, { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-symbols.nvim" }, -- { "nvim-telescope/telescope-frecency.nvim" },
+        { 'nvim-telescope/telescope-ui-select.nvim' },
         -- { "kkharji/sqlite.lua" }, -- used by frecency
         { "nvim-telescope/telescope-live-grep-args.nvim" }, { "nvim-telescope/telescope-dap.nvim" }, {
         'nvim-telescope/telescope-fzf-native.nvim',
+
         build =
         'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     } }
@@ -15,9 +17,13 @@ function M.config()
     -- local trouble = require("trouble.providers.telescope")
 
     local telescope = require("telescope")
-    local borderless = true
     telescope.setup({
         extensions = {
+            extensions = {
+                ['ui-select'] = {
+                    require('telescope.themes').get_dropdown(),
+                },
+            },
             fzf = {
                 fuzzy = true,                   -- false will only do exact matching
                 override_generic_sorter = true, -- override the generic sorter
@@ -56,6 +62,7 @@ function M.config()
     telescope.load_extension("file_browser")
     telescope.load_extension("dap")
     telescope.load_extension("project")
+    telescope.load_extension('ui-select')
     telescope.load_extension("live_grep_args")
 end
 
