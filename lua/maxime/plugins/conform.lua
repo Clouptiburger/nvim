@@ -1,5 +1,5 @@
 local M = {
-    enabled = false,
+    enabled = true,
     'stevearc/conform.nvim',
     opts = {},
 }
@@ -14,6 +14,7 @@ function M.init()
             typescript = { "prettierd" },
             javascript = { "prettierd" },
             json = { "prettierd" },
+            lua = { 'stylua' },
         }
     })
 
@@ -21,4 +22,3 @@ function M.init()
 end
 
 return M
-

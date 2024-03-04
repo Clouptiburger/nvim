@@ -8,17 +8,12 @@ local M = {
 }
 
 function M.surround()
-    require("mini.surround").setup({
-        mappings = {
-            add = "sa",            -- Add surrounding in Normal and Visual modes
-            delete = "sd",         -- Delete surrounding
-            find = "sf",           -- Find surrounding (to the right)
-            find_left = "sF",      -- Find surrounding (to the left)
-            highlight = "sh",      -- Highlight surrounding
-            replace = "sr",        -- Replace surrounding
-            update_n_lines = "sn", -- Update `n_lines`
-        },
-    })
+    -- Add/delete/replace surroundings (brackets, quotes, etc.)
+    --
+    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+    -- - sd'   - [S]urround [D]elete [']quotes
+    -- - sr)'  - [S]urround [R]eplace [)] [']
+    require("mini.surround").setup()
 end
 
 function M.jump()
@@ -77,6 +72,22 @@ function M.ai()
     map("o", "block")
 end
 
+function M.statusLine()
+    -- Simple and easy statusline.
+    --  You could remove this setup call if you don't like it,
+    --  and try some other statusline plugin
+    local statusline = require 'mini.statusline'
+    statusline.setup()
+
+    -- You can configure sections in the statusline by overriding their
+    -- default behavior. For example, here we disable the section for
+    -- cursor information because line numbers are already enabled
+    ---@diagnostic disable-next-line: duplicate-set-field
+    statusline.section_location = function()
+        return ''
+    end
+end
+
 function M.config()
     M.jump()
     M.surround()
@@ -85,6 +96,7 @@ function M.config()
     M.move()
     M.comment()
     M.bracketed()
+    M.statusLine()
 end
 
 function M.init()

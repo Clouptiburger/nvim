@@ -1,5 +1,7 @@
 local M = {
     "nvim-telescope/telescope.nvim",
+    event = 'VimEnter',
+    branch = '0.1.x',
     cmd = { "Telescope" },
     dependencies = { { "nvim-telescope/telescope-file-browser.nvim" }, { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-symbols.nvim" }, -- { "nvim-telescope/telescope-frecency.nvim" },

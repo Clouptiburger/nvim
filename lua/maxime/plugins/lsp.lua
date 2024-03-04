@@ -1,12 +1,6 @@
 local M = {
     'neovim/nvim-lspconfig',
     -- event = "BufReadPre",
-
-
-
-
-
-
     enabled = true,
     dependencies = {
         -- LSP Support
@@ -21,6 +15,7 @@ local M = {
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-nvim-lua' },
+        { 'hrsh7th/cmp-path' },
 
         -- Snippets
         { 'L3MON4D3/LuaSnip' },
@@ -188,6 +183,7 @@ function M.config()
         sources = {
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
+            { name = 'path' },
         },
     }
 end
