@@ -96,7 +96,7 @@ function M.config()
     M.move()
     M.comment()
     M.bracketed()
-    M.statusLine()
+    -- M.statusLine()
 end
 
 function M.init()
