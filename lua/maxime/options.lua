@@ -2,7 +2,6 @@ vim.cmd "set mouse=a"
 -- Don't pass messages to |ins-completion-menu|.
 -- vim.opt.shortmess:append("c")
 
-vim.cmd("lan en")
 vim.cmd("set rnu")
 
 vim.g.mapleader = ' '
