@@ -16,6 +16,12 @@ vim.g.netrw_winsize = 30
 -- elseif vim.fn.has('win32') == 1 then
 --     vim.opt.undodir = os.getenv("HOMEPATH") .. "/.vim/undodir"
 -- end
+vim.opt.inccommand = "split"
+
+vim.opt.clipboard = "unnamedplus"
+
+-- Don't have `o` add a comment
+vim.opt.formatoptions:remove "o"
 
 local default_options = {
     conceallevel = 0,       -- so that `` is visible in markdown files
@@ -37,7 +43,6 @@ local default_options = {
     writebackup = false,    -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     cursorline = true,      -- highlight the current line
     signcolumn = "yes",     -- always show the sign column, otherwise it would shift the text each time
-    clipboard = "unnamedplus",
     undofile = true,        -- Save undo history
     nu = true,
     relativenumber = true,
@@ -83,3 +88,4 @@ vim.filetype.add({
         templ = "templ",
     },
 })
+
