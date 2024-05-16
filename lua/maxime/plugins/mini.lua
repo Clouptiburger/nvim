@@ -34,38 +34,7 @@ function M.move()
 end
 
 function M.ai()
-    local ai = require("mini.ai")
-    require("mini.ai").setup({
-        n_lines = 500,
-        -- search_method = "cover_or_next",
-        custom_textobjects = {
-            o = ai.gen_spec.treesitter({
-                a = { "@block.outer", "@conditional.outer", "@loop.outer" },
-                i = { "@block.inner", "@conditional.inner", "@loop.inner" },
-            }, {}),
-            f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-            c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
-        },
-    })
-
-    local map = function(text_obj, desc)
-        for _, side in ipairs({ "left", "right" }) do
-            for dir, d in pairs({ prev = "[", next = "]" }) do
-                local lhs = d .. (side == "right" and text_obj:upper() or text_obj:lower())
-                for _, mode in ipairs({ "n", "x", "o" }) do
-                    vim.keymap.set(mode, lhs, function()
-                        ai.move_cursor(side, "a", text_obj, { search_method = dir })
-                    end, {
-                        desc = dir .. " " .. desc,
-                    })
-                end
-            end
-        end
-    end
-
-    map("f", "function")
-    map("c", "class")
-    map("o", "block")
+    require("mini.ai").setup()
 end
 
 function M.statusLine()
@@ -128,17 +97,21 @@ function M.clue()
     })
 end
 
+function M.cursorword()
+    require("mini.cursorword").setup()
+end
 
 function M.config()
     M.jump()
     M.surround()
-    -- M.ai()
+    M.ai()
     M.pairs()
     M.move()
     M.comment()
     M.bracketed()
     M.statusLine()
     M.clue()
+    M.cursorword()
 end
 
 function M.init()
