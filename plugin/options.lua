@@ -10,6 +10,7 @@ vim.g.maplocalleader = ' '
 
 vim.g.netrw_winsize = 30
 
+
 -- -- set permanent undo
 -- if vim.fn.has('linux') == 1 then
 --     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -22,6 +23,9 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Don't have `o` add a comment
 vim.opt.formatoptions:remove "o"
+
+-- makes the statusline take all splits
+vim.opt.laststatus = 3
 
 local default_options = {
     conceallevel = 0,       -- so that `` is visible in markdown files
