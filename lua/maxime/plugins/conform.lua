@@ -10,10 +10,10 @@ function M.init()
     c.setup({
         formatters_by_ft = {
             python = { "black" },
-            html = { "dprint", "djlint" },
-            typescript = { "prettierd" },
-            javascript = { "prettierd" },
-            json = { "prettierd" },
+            html = { "prettier", "prettier" },
+            typescript = { "prettier" },
+            javascript = { "prettier" },
+            json = { "prettier" },
             lua = { 'stylua' },
         }
     })

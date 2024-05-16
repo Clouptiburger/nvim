@@ -70,7 +70,7 @@ for k, v in pairs(default_options) do
 end
 
 -- powershell, currently deactivated as it clashes with the floatting terminal of the go plugin
-if true then
+if not vim.uv.os_uname().sysname == "Linux" then
     local powershell_options = {
         shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
         shellcmdflag =
