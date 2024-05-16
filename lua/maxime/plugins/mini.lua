@@ -1,10 +1,6 @@
 local M = {
     "echasnovski/mini.nvim",
     version = false,
-    event = "VeryLazy",
-    dependencies = {
-        { "JoosepAlviste/nvim-ts-context-commentstring" },
-    },
 }
 
 function M.surround()
@@ -17,11 +13,11 @@ function M.surround()
 end
 
 function M.jump()
-    require("mini.jump").setup({})
+    require("mini.jump").setup()
 end
 
 function M.pairs()
-    require("mini.pairs").setup({})
+    require("mini.pairs").setup()
 end
 
 function M.bracketed()
@@ -79,13 +75,6 @@ function M.statusLine()
     local statusline = require 'mini.statusline'
     statusline.setup()
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we disable the section for
-    -- cursor information because line numbers are already enabled
-    ---@diagnostic disable-next-line: duplicate-set-field
-    statusline.section_location = function()
-        return ''
-    end
 end
 
 function M.config()
@@ -96,7 +85,7 @@ function M.config()
     M.move()
     M.comment()
     M.bracketed()
-    -- M.statusLine()
+    M.statusLine()
 end
 
 function M.init()
