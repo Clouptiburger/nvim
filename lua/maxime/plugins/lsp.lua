@@ -76,7 +76,7 @@ function M.config()
         nmap('<M-C-L>', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<S-M-F>', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-        nmap('<leader>ck', vim.lsp.buf.rename, '[R]e[n]ame')
+        nmap('<leader>cr', vim.lsp.buf.rename, '[R]e[n]ame')
         nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         nmap("<leader>ci", require('telescope.builtin').lsp_incoming_calls, '[C]alls [I]incoming')
         nmap("<leader>co", require('telescope.builtin').lsp_outgoing_calls, '[C]alls [O]utgoing')
@@ -91,7 +91,6 @@ function M.config()
         nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
         -- See `:help K` for why this keymap
-        nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
         nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
         -- Lesser used LSP functionality
