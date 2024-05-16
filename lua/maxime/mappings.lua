@@ -77,3 +77,7 @@ vim.keymap.set('n', 'ç', '[', { remap = true })
 -- remap for comments
 vim.keymap.set('n', '', 'gcc', { remap = true })
 vim.keymap.set('v', '', 'gc', { remap = true })
+
+
+-- execute current line
+vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
