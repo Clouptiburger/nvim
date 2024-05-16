@@ -27,6 +27,8 @@ vim.opt.formatoptions:remove "o"
 -- makes the statusline take all splits
 vim.opt.laststatus = 3
 
+vim.lsp.inlay_hint.enable()
+
 local default_options = {
     conceallevel = 0,       -- so that `` is visible in markdown files
     fileencoding = "utf-8", -- the encoding written to a file
