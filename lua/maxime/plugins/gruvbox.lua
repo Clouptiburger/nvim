@@ -1,5 +1,5 @@
 local M = {
-    enabled = true,
+    enabled = false,
     "ellisonleao/gruvbox.nvim",
     name = "gruvbox"
 }
