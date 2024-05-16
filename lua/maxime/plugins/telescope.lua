@@ -72,9 +72,9 @@ function M.init()
     vim.keymap.set("n", "<leader>ff", require('telescope.builtin').fd, {
         desc = "Telescope Find Files"
     })
-    vim.keymap.set('n', '<C-P>', require('telescope.builtin').fd, {
-        desc = "Telescope Find Files"
-    })
+    -- vim.keymap.set('n', '<C-P>', require('telescope.builtin').fd, {
+    --     desc = "Telescope Find Files"
+    -- })
     vim.keymap.set('n', "<leader>fg", require('telescope.builtin').live_grep, {
         desc = "Telescope Live Grep"
     })
