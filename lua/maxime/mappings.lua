@@ -1,11 +1,12 @@
-local wk = require("which-key")
+-- local wk = require("which-key")
+--
+-- wk.setup({
+--     show_help = false,
+--     triggers = "auto",
+--     plugins = { spelling = true },
+--     key_labels = { ["<leader>"] = "SPC" },
+-- })
 
-wk.setup({
-    show_help = false,
-    triggers = "auto",
-    plugins = { spelling = true },
-    key_labels = { ["<leader>"] = "SPC" },
-})
 -- expand %% to the current dir
 vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 
