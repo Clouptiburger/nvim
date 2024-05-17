@@ -34,11 +34,6 @@ vim.keymap.set('n', '<A-right>', '<C-w>5>')
 vim.keymap.set('n', '<A-up>', '<C-w>5+')
 vim.keymap.set('n', '<A-down>', '<C-w>5-')
 
-vim.keymap.set('n', '<C-A-left>', '<C-w><')
-vim.keymap.set('n', '<C-A-right>', '<C-w>>')
-vim.keymap.set('n', '<C-A-up>', '<C-w>+')
-vim.keymap.set('n', '<C-A-down>', '<C-w>-')
-
 -- Quick fix list short cut
 vim.keymap.set('n', "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set('n', "<leader>k", "<cmd>cprev<CR>zz")
