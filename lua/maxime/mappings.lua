@@ -76,3 +76,9 @@ vim.keymap.set('v', '', 'gc', { remap = true })
 
 -- execute current line
 vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
+
+-- toggle inlay hints
+vim.keymap.set("n", "<leader>h", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end,
+    { desc = "toggle inlay hints" })

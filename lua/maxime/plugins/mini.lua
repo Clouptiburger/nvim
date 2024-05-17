@@ -78,6 +78,10 @@ function M.clue()
             -- `z` key
             { mode = 'n', keys = 'z' },
             { mode = 'x', keys = 'z' },
+
+            -- ']' keys 
+            { mode = 'n', keys = ']' },
+            { mode = 'n', keys = '[' },
         },
 
         clues = {
@@ -112,6 +116,5 @@ function M.config()
     M.clue()
     M.cursorword()
 end
-
 
 return M
