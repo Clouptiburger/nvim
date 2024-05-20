@@ -114,7 +114,7 @@ function M.config()
     M.bracketed()
     M.statusLine()
     M.clue()
-    M.cursorword()
+    -- M.cursorword()
 end
 
 return M
