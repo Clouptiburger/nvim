@@ -16,6 +16,7 @@ function M.init()
             markdown = { "prettier" },
             json = { "prettier" },
             lua = { 'stylua' },
+            markdown = { "prettier" },
         }
     })
 
