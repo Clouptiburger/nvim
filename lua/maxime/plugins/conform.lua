@@ -13,7 +13,6 @@ function M.init()
             html = { "prettier", "prettier" },
             typescript = { "prettier" },
             javascript = { "prettier" },
-            markdown = { "prettier" },
             json = { "prettier" },
             lua = { 'stylua' },
             markdown = { "prettier" },
