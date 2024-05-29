@@ -17,7 +17,6 @@ vim.g.netrw_winsize = 30
 -- elseif vim.fn.has('win32') == 1 then
 --     vim.opt.undodir = os.getenv("HOMEPATH") .. "/.vim/undodir"
 -- end
-vim.opt.inccommand = "split"
 
 vim.opt.clipboard = "unnamedplus"
 
