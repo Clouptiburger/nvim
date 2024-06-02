@@ -72,6 +72,14 @@ function M.config()
             vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
         end
 
+        local imap = function(keys, func, desc)
+            if desc then
+                desc = 'LSP: ' .. desc
+            end
+
+            vim.keymap.set('i', keys, func, { buffer = bufnr, desc = desc })
+        end
+
         nmap('<leader>fr', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<M-C-L>', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<S-M-F>', vim.lsp.buf.format, '[F]o[n]mat')
@@ -91,7 +99,8 @@ function M.config()
         nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
         -- See `:help K` for why this keymap
-        nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+        imap('<C-h>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
 
         -- Lesser used LSP functionality
         nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -186,7 +195,6 @@ function M.config()
             { name = 'path' },
         },
     }
-
 end
 
 return M
