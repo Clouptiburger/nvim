@@ -10,7 +10,8 @@ function M.init()
     c.setup({
         formatters_by_ft = {
             python = { "black" },
-            html = { "prettier", "prettier" },
+            html = { "prettier" },
+            css = { "prettier" },
             typescript = { "prettier" },
             javascript = { "prettier" },
             json = { "prettier" },
