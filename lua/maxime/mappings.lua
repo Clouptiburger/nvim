@@ -5,19 +5,6 @@ vim.keymap.set('c', '%%', "<C-R>=expand('%:p:h')<CR>")
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
--- Replace by mini.move
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('i', "<A-j>", "<Esc>:m .+1<CR>==gi")
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('i', "<A-k>", "<Esc>:m .-2<CR>==gi")
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('n', "<A-j>", ":m .+1<CR>==")
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('n', "<A-k>", ":m .-2<CR>==")
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv-gv")
--- -- Move current line / block with Alt-j/k ala vscode.
--- vim.keymap.set('v', "<A-k>", ":m '<-2<CR>gv-gv")
 
 -- hide search highlight by pressing esc
 vim.keymap.set('n', '<esc>', '<cmd>:noh<CR>')
@@ -46,15 +33,7 @@ vim.keymap.set('n', 'x', '"_x') -- no yank with x
 vim.keymap.set('t', "<Esc>", "<C-\\><C-n>")
 
 
--- vim.keymap.set('n', "<leader>cD", "<cmd>TroubleToggle<cr>", { desc = "Trouble Code Diagnostics" })
-
-
 vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
-
--- Diagnostic keymaps
-vim.keymap.set("n", "<F2>", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
-vim.keymap.set("n", "<S-<F2>>", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
-vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -76,6 +55,7 @@ vim.keymap.set('v', '', 'gc', { remap = true })
 
 -- execute current line
 vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
+vim.keymap.set({ "n", "v" }, "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
 -- toggle inlay hints
 vim.keymap.set("n", "<leader>h", function()

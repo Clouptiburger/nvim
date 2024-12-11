@@ -1,24 +1,9 @@
-vim.cmd "set mouse=a"
--- Don't pass messages to |ins-completion-menu|.
--- vim.opt.shortmess:append("c")
-
-vim.cmd("set rnu")
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
--- vim.cmd "set foldmethod=indent"
 
 vim.g.netrw_winsize = 30
 
-
--- -- set permanent undo
--- if vim.fn.has('linux') == 1 then
---     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- elseif vim.fn.has('win32') == 1 then
---     vim.opt.undodir = os.getenv("HOMEPATH") .. "/.vim/undodir"
--- end
-
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Don't have `o` add a comment
 vim.opt.formatoptions:remove "o"
@@ -28,8 +13,6 @@ vim.opt.laststatus = 3
 
 
 local default_options = {
-    conceallevel = 0,       -- so that `` is visible in markdown files
-    fileencoding = "utf-8", -- the encoding written to a file
     hidden = true,          -- required to keep multiple buffers and open multiple buffers
     hlsearch = true,        -- highlight all matches on previous search pattern
     ignorecase = true,      -- ignore case in search patterns

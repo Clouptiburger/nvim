@@ -113,9 +113,6 @@ function M.init()
     vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
-    vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').builtin, {
-        desc = "Telescope Builtins"
-    })
     vim.keymap.set('n', "<leader>fi", require('telescope').extensions.live_grep_args.live_grep_args, {
         desc = "Telescope Live Grep"
     })
