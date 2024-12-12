@@ -80,7 +80,7 @@ function M.config()
             vim.keymap.set('i', keys, func, { buffer = bufnr, desc = desc })
         end
 
-        nmap('<leader>fr', vim.lsp.buf.format, '[F]o[n]mat')
+        -- nmap('<leader>fr', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<M-C-L>', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<S-M-F>', vim.lsp.buf.format, '[F]o[n]mat')
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
