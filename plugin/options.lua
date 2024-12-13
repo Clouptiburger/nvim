@@ -3,7 +3,7 @@ vim.g.maplocalleader = ' '
 
 vim.g.netrw_winsize = 30
 
--- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Don't have `o` add a comment
 vim.opt.formatoptions:remove "o"
