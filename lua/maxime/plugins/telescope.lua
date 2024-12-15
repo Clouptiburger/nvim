@@ -110,6 +110,9 @@ function M.init()
     vim.keymap.set('n', '<C-<space>>', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
+    vim.keymap.set('n', '<leader><leader>t', require('telescope.builtin').builtin, {
+        desc = "Telescope Builtins"
+    })
     vim.keymap.set('n', '<leader>fB', require('telescope.builtin').builtin, {
         desc = "Telescope Builtins"
     })
