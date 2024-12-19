@@ -13,7 +13,6 @@ return {
 		opts = {
 			keymap = {
 				preset = "default",
-				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			},
 
 			appearance = {
