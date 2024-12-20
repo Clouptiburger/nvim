@@ -19,7 +19,7 @@ function M.config()
 		-- clangd = {},
 		gopls = {},
 		-- rust_analyzer = {},
-		tsserver = {},
+		ts_ls = {},
 		html = {
 			css = { lint = { validProperties = {} } },
 			html = { suggest = { html5 = true } },
