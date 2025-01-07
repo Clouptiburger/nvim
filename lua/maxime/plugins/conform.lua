@@ -11,6 +11,7 @@ function M.init()
         formatters_by_ft = {
             python = { "black" },
             html = { "prettier" },
+            yaml = { "prettier" },
             css = { "prettier" },
             typescript = { "prettier" },
             javascript = { "prettier" },
