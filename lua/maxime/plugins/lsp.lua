@@ -27,12 +27,6 @@ function M.config()
 			filetypes = { "html", "twig", "hbs" },
 		},
 
-		pyright = {
-		    analysis = {
-		        typeCheckingMode = "off",
-		    },
-		},
-
 		lua_ls = {
 			Lua = {
 				workspace = { checkThirdParty = false },
