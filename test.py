@@ -5,3 +5,4 @@ def coucou(a: str):
 if __name__ == "__main__":
     print("coucou")
     coucou("hello")
+
